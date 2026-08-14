@@ -898,105 +898,297 @@ body{overflow-x:hidden}
 </style>
 
 
-<style id="feeder-collection-completely-locked">
-/* HARD LOCK: the entire Feeder Pole Setup Library is display-only. */
-#feeder-pole-setups{
-  position:relative!important;
-  cursor:default!important;
-}
-#feeder-pole-setups::after{
-  content:"";
-  position:absolute;
-  z-index:999999;
-  inset:0;
+
+
+
+
+
+
+<style id="all-launcher-tabs-clickable">
+.setup-library-link,
+.library-card-link{
   display:block;
-  cursor:default!important;
-  background:transparent;
+  color:inherit;
+  text-decoration:none;
+  min-width:0;
+}
+.setup-library-link{
+  cursor:pointer!important;
+}
+.setup-library-link:hover,
+.library-card-link:hover{
+  color:inherit;
+}
+.setup-library-link:focus-visible,
+.library-card-link:focus-visible{
+  outline:2px solid #35cbe9;
+  outline-offset:3px;
+  border-radius:14px;
+}
+.setup-library-link > div,
+.library-card-link > div,
+.library-card-link > article{
+  height:100%;
+  transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;
+}
+.setup-library-link:hover > div,
+.library-card-link:hover > div,
+.library-card-link:hover > article{
+  transform:translateY(-2px);
+  border-color:#35cbe9!important;
+  box-shadow:0 10px 24px rgba(0,0,0,.22);
+}
+</style>
+
+
+<style id="fixed-setup-launcher-layout">
+/* Repair/stabilize the seven clickable setup cards. */
+.setup-launcher > .setup-library-link{
+  min-height:92px;
+  padding:13px 11px;
+  border:1px solid #214958;
+  border-radius:14px;
+  background:linear-gradient(160deg,#0b2029,#07171e);
+  text-decoration:none;
+  color:#dff5f8;
+  transition:.18s ease;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-sizing:border-box;
+  width:100%;
+  min-width:0;
+  cursor:pointer!important;
+  opacity:1!important;
+  filter:none!important;
   pointer-events:auto!important;
+  user-select:none;
 }
-#feeder-pole-setups a,
-#feeder-pole-setups button,
-#feeder-pole-setups input,
-#feeder-pole-setups select,
-#feeder-pole-setups textarea,
-#feeder-pole-setups [role="button"],
-#feeder-pole-setups [onclick]{
-  pointer-events:none!important;
-  cursor:default!important;
+.setup-launcher > .setup-library-link:hover{
+  transform:translateY(-3px);
+  border-color:#3b8192;
+  background:#0c2833;
+  box-shadow:0 12px 25px rgba(0,0,0,.2);
 }
-#feeder-pole-setups *{
-  cursor:default!important;
+.setup-launcher > .setup-library-link .setup-name:after{
+  content:none!important;
+}
+.setup-launcher > .setup-library-link .setup-meta{
+  color:#7696a1;
+}
+</style>
+
+
+<style id="exact-tab-scroll-position">
+[id="feeder-pole-setups"],
+[id="casting-pole-setups"],
+[id="spinning-pole-setups"],
+[id="match-pole-setups"],
+[id="low-budget-setups"],
+[id="best-setups"],
+[id="fully-tuned-setups"]{
+  scroll-margin-top: 90px;
 }
 </style>
 
 
-<style id="all-seven-setup-collections-hard-lock">
-/* HARD LOCK: all seven setup collections are display-only. */
-#feeder-pole-setups,
-#casting-pole-setups,
-#spinning-pole-setups,
-#match-pole-setups,
-#low-budget-setups,
-#best-setups,
-#fully-tuned-setups {
-  position:relative !important;
-  cursor:default !important;
-}
 
-/* Transparent shield prevents mouse/touch interaction anywhere inside each collection. */
-#feeder-pole-setups::after,
-#casting-pole-setups::after,
-#spinning-pole-setups::after,
-#match-pole-setups::after,
-#low-budget-setups::after,
-#best-setups::after,
-#fully-tuned-setups::after {
-  content:"";
-  position:absolute;
-  z-index:999999;
-  inset:0;
-  display:block;
-  background:transparent;
-  pointer-events:auto !important;
-  cursor:default !important;
-}
 
-#feeder-pole-setups *,
-#casting-pole-setups *,
-#spinning-pole-setups *,
-#match-pole-setups *,
-#low-budget-setups *,
-#best-setups *,
-#fully-tuned-setups * {
-  cursor:default !important;
-}
 
-#feeder-pole-setups a,
-#feeder-pole-setups button,
-#feeder-pole-setups [role="button"],
-#casting-pole-setups a,
-#casting-pole-setups button,
-#casting-pole-setups [role="button"],
-#spinning-pole-setups a,
-#spinning-pole-setups button,
-#spinning-pole-setups [role="button"],
-#match-pole-setups a,
-#match-pole-setups button,
-#match-pole-setups [role="button"],
-#low-budget-setups a,
-#low-budget-setups button,
-#low-budget-setups [role="button"],
-#best-setups a,
-#best-setups button,
-#best-setups [role="button"],
-#fully-tuned-setups a,
-#fully-tuned-setups button,
-#fully-tuned-setups [role="button"] {
-  pointer-events:none !important;
-  cursor:default !important;
+<style id="working-setup-card-style">
+.setup-launcher{
+  display:grid;
+  grid-template-columns:repeat(7,minmax(0,1fr));
+  gap:10px;
+}
+.setup-launcher .setup-library-inert{
+  min-height:92px;
+  padding:13px 11px;
+  border:1px solid #214958;
+  border-radius:14px;
+  background:linear-gradient(160deg,#0b2029,#07171e);
+  color:#dff5f8;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-sizing:border-box;
+  min-width:0;
+  cursor:default;
+  user-select:none;
+}
+.setup-launcher .setup-library-inert:hover{
+  transform:none;
+  border-color:#214958;
+  background:linear-gradient(160deg,#0b2029,#07171e);
+  box-shadow:none;
+}
+.setup-launcher .setup-icon{font-size:1.25rem}
+.setup-launcher .setup-name{font-size:.68rem;font-weight:900;line-height:1.25}
+.setup-launcher .setup-meta{font-size:.57rem;color:#7696a1;margin-top:4px}
+.setup-launcher-wide{
+  grid-template-columns:repeat(6,minmax(0,1fr));
+}
+@media(max-width:1100px){
+  .setup-launcher{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .setup-launcher-wide{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(max-width:700px){
+  .setup-launcher,.setup-launcher-wide{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 </style>
 
+
+<style id="hero-then-finder-layout">
+/* Professional page order: Hero first, then What Should I Use. */
+.what-should-i-use,
+#what-should-i-use,
+.finder-section {
+  scroll-margin-top: 90px;
+}
+</style>
+
+
+<style id="professional-finder-top">
+.professional-finder-top{
+  width:100%;
+  max-width:1440px;
+  margin:18px auto 28px;
+  padding:0 18px;
+  box-sizing:border-box;
+}
+.professional-finder-top > section{
+  margin:0 auto!important;
+  width:100%!important;
+  max-width:none!important;
+  box-sizing:border-box;
+  position:relative;
+}
+.professional-finder-top > section:hover{
+  transform:none;
+}
+.professional-finder-top select{
+  min-height:46px;
+}
+.professional-finder-top button{
+  min-height:46px;
+  font-weight:800;
+}
+@media (max-width:700px){
+  .professional-finder-top{
+    padding:0 10px;
+    margin-top:12px;
+    margin-bottom:20px;
+  }
+}
+</style>
+
+
+<style id="real-top-finder-style">
+.finder-top{
+  padding:24px 0 8px!important;
+  position:relative;
+  z-index:20;
+}
+.finder-top-card{
+  background:linear-gradient(145deg,#12394b,#0a202d);
+  border:1px solid #2a6277;
+  border-radius:22px;
+  padding:25px;
+  box-shadow:0 16px 45px #0004;
+}
+.finder-top-card h2{
+  margin:7px 0 5px;
+  font-size:clamp(1.7rem,3vw,2.25rem);
+  letter-spacing:-1px;
+}
+.finder-top-card p{
+  color:var(--muted);
+  margin:0 0 15px;
+  max-width:900px;
+}
+.finder-controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  max-width:900px;
+  align-items:stretch;
+}
+.finder-controls .select{
+  flex:1 1 520px;
+  min-width:260px;
+  min-height:48px;
+}
+.finder-button{
+  min-height:48px;
+  border:0;
+  border-radius:12px;
+  padding:13px 20px;
+  background:#39d5ff;
+  color:#031019;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 8px 24px #39d5ff22;
+}
+.finder-button:hover{
+  filter:brightness(1.06);
+  transform:translateY(-1px);
+}
+.finder-result{
+  margin-top:18px;
+}
+@media(max-width:700px){
+  .finder-top{padding:14px 0 4px!important}
+  .finder-top-card{padding:19px}
+  .finder-controls{display:grid;grid-template-columns:1fr}
+  .finder-controls .select{min-width:0;width:100%}
+  .finder-button{width:100%}
+}
+</style>
+
+
+<style id="setup-tabs-working-style">
+.setup-target-link{
+  display:flex!important;
+  min-height:92px;
+  padding:13px 11px;
+  box-sizing:border-box;
+  border:1px solid #214958;
+  border-radius:14px;
+  background:linear-gradient(160deg,#0b2029,#07171e);
+  color:#dff5f8!important;
+  text-decoration:none!important;
+  flex-direction:column;
+  justify-content:space-between;
+  cursor:pointer!important;
+  pointer-events:auto!important;
+  opacity:1!important;
+  filter:none!important;
+  transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;
+}
+.setup-target-link:hover{
+  transform:translateY(-2px);
+  border-color:#35cbe9!important;
+  box-shadow:0 10px 24px rgba(0,0,0,.22);
+}
+.setup-target-link:focus-visible{
+  outline:2px solid #35cbe9;
+  outline-offset:3px;
+}
+#feeder-pole-library-target,
+#casting-pole-library-target,
+#spinning-pole-library-target,
+#match-pole-library-target,
+#low-budget-library-target,
+#best-setup-library-target,
+#fully-tuned-library-target{
+  scroll-margin-top:110px;
+}
+</style>
+
+<style id="setup-tabs-exact-target-style">
+#feeder-pole-destination,#casting-pole-destination,#spinning-pole-destination,#match-pole-destination,#low-budget-destination,#best-setup-destination,#fully-tuned-destination{scroll-margin-top:110px;}
+.setup-target-link{pointer-events:auto!important;cursor:pointer!important;}
+</style>
 </head>
 <body id="top">
 
@@ -1009,7 +1201,7 @@ body{overflow-x:hidden}
 </div>
 
 
-<a class="skip-link" href="#main-content">Skip to main content</a>
+<a class="skip-link"                     href="#common-baits-library">Skip to main content</a>
 <header>
 <div class="wrap">
 <nav>
@@ -1127,6 +1319,24 @@ body{overflow-x:hidden}
 })();
 </script>
 
+
+<section id="finder" class="finder-top">
+  <div class="wrap">
+    <div class="finder-top-card">
+      <div class="eyebrow">🎯 WHAT SHOULD I USE?</div>
+      <h2>Pick a fish. Get a setup.</h2>
+      <p>Choose a target below and the guide will pull the matching rod, reel, line, hook, bait/lure, location and time from the database.</p>
+      <div class="finder-controls">
+        <select id="finderFish" class="select">
+          <option value="">Choose a fish…</option>
+        </select>
+        <button id="findSetup" class="finder-button" type="button">🎣 Get My Setup</button>
+      </div>
+      <div id="finderResult" class="finder-result"></div>
+    </div>
+  </div>
+</section>
+
 <main id="main-content">
 <section class="hero"><div class="wrap"><div class="hero-grid">
 <div>
@@ -1138,7 +1348,7 @@ body{overflow-x:hidden}
 <div class="hero-panel"><div class="eyebrow">QUICK START</div><h2>Don't know what to use?</h2><p>Use the <b>What should I use?</b> finder, choose your target fish, and get a complete starting rig.</p><div class="stat-grid"><div class="stat"><strong>40+</strong><small>fish setups</small></div><div class="stat"><strong>10</strong><small>data fields</small></div><div class="stat"><strong>∞</strong><small>tuning options</small></div></div></div>
 </div></div></section>
 
-<section class="top-setup-center" aria-label="Professional Setup Center">
+<section class="top-setup-center" id="setup-center-moved" aria-label="Professional Setup Center">
   <div class="setup-hero">
     <div class="setup-hero-top">
       <div>
@@ -1152,15 +1362,15 @@ body{overflow-x:hidden}
     
 <div class="setup-directory">
   <div class="setup-directory-title">NEW • SETUP LIBRARIES</div>
-  <div class="setup-launcher">
-    <div class="setup-library-unclickable" data-section="feeder-pole-setups"><span class="setup-icon">🪱</span><span class="setup-name">Feeder Pole</span><span class="setup-meta">Bottom fishing</span></div>
-    <div class="setup-library-unclickable" data-section="casting-pole-setups"><span class="setup-icon">🎯</span><span class="setup-name">Casting Pole</span><span class="setup-meta">Power casting</span></div>
-    <div class="setup-library-unclickable" data-section="spinning-pole-setups"><span class="setup-icon">🎣</span><span class="setup-name">Spinning Pole</span><span class="setup-meta">All-purpose</span></div>
-    <div class="setup-library-unclickable" data-section="match-pole-setups"><span class="setup-icon">🏆</span><span class="setup-name">Match Pole</span><span class="setup-meta">Float fishing</span></div>
-    <div class="setup-library-unclickable" data-section="low-budget-setups"><span class="setup-icon">💰</span><span class="setup-name">Low-Budget</span><span class="setup-meta">Save credits</span></div>
-    <div class="setup-library-unclickable" data-section="best-setups"><span class="setup-icon">⭐</span><span class="setup-name">Best Setups</span><span class="setup-meta">Top picks</span></div>
-    <div class="setup-library-unclickable" data-section="fully-tuned-setups"><span class="setup-icon">⚙️</span><span class="setup-name">Fully Tuned</span><span class="setup-meta">Precision builds</span></div>
-  </div>
+  <div class="setup-launcher" aria-label="Setup collections">
+  <a class="setup-library-link setup-target-link" href="#feeder-pole-destination" aria-label="Go to Feeder Pole setup library"><span class="setup-icon">🪱</span><span class="setup-name">Feeder Pole</span><span class="setup-meta">Bottom fishing</span></a>
+  <a class="setup-library-link setup-target-link" href="#casting-pole-destination" aria-label="Go to Casting Pole setup library"><span class="setup-icon">🎯</span><span class="setup-name">Casting Pole</span><span class="setup-meta">Power casting</span></a>
+  <a class="setup-library-link setup-target-link" href="#spinning-pole-destination" aria-label="Go to Spinning Pole setup library"><span class="setup-icon">🎣</span><span class="setup-name">Spinning Pole</span><span class="setup-meta">All-purpose</span></a>
+  <a class="setup-library-link setup-target-link" href="#match-pole-destination" aria-label="Go to Match Pole setup library"><span class="setup-icon">🏆</span><span class="setup-name">Match Pole</span><span class="setup-meta">Float fishing</span></a>
+  <a class="setup-library-link setup-target-link" href="#low-budget-destination" aria-label="Go to Low-Budget setup library"><span class="setup-icon">💰</span><span class="setup-name">Low-Budget</span><span class="setup-meta">Save credits</span></a>
+  <a class="setup-library-link setup-target-link" href="#best-setup-destination" aria-label="Go to Best Setups setup library"><span class="setup-icon">⭐</span><span class="setup-name">Best Setups</span><span class="setup-meta">Top picks</span></a>
+  <a class="setup-library-link setup-target-link" href="#fully-tuned-destination" aria-label="Go to Fully Tuned setup library"><span class="setup-icon">⚙️</span><span class="setup-name">Fully Tuned</span><span class="setup-meta">Precision builds</span></a>
+</div>
 
   <div class="setup-directory-title">DATABASE • LURE / TACKLE LIBRARIES</div>
   <div class="setup-launcher setup-launcher-wide">
@@ -1171,7 +1381,7 @@ body{overflow-x:hidden}
     <a href="#rig-library"><span class="setup-icon">🧵</span><span class="setup-name">Rigs</span><span class="setup-meta">Complete library</span></a>
     <a href="#feeder-library"><span class="setup-icon">🧺</span><span class="setup-name">Feeders</span><span class="setup-meta">Complete library</span></a>
     <a href="#softbait-library"><span class="setup-icon">🪱</span><span class="setup-name">Soft Baits</span><span class="setup-meta">Complete library</span></a>
-    <a class="disabled-library" aria-disabled="true" tabindex="-1"><span class="setup-icon">🌊</span><span class="setup-name">Saltwater Lure</span><span class="setup-meta">Library locked</span></a>
+    <a class="library-card-link" href="#saltwater-library"><span class="setup-icon">🌊</span><span class="setup-name">Saltwater Lure</span><span class="setup-meta">Library locked</span></a>
     <a href="#spoon-spinner-library"><span class="setup-icon">🌀</span><span class="setup-name">Spoons & Spinners</span><span class="setup-meta">Lure library</span></a>
     <a href="#hardbait-library"><span class="setup-icon">🐟</span><span class="setup-name">Hard Baits</span><span class="setup-meta">Lure library</span></a>
     <a href="#hook-library"><span class="setup-icon">🪝</span><span class="setup-name">Hooks</span><span class="setup-meta">Complete library</span></a>
@@ -1195,19 +1405,6 @@ body{overflow-x:hidden}
     
   </div>
 </section>
-
-
-
-<section id="finder"><div class="wrap">
-<div style="background:linear-gradient(145deg,#12394b,#0a202d);border:1px solid #2a6277;border-radius:22px;padding:25px;box-shadow:0 16px 45px #0004">
-<div class="eyebrow">🎯 What should I use?</div>
-<h2 style="margin:7px 0 5px;font-size:2rem">Pick a fish. Get a setup.</h2>
-<p style="color:var(--muted);margin-top:0">Choose a target below and the guide will pull the matching rod, reel, line, hook, bait/lure, location and time from the database.</p>
-<div style="display:flex;gap:10px;flex-wrap:wrap;max-width:760px"><select id="finderFish" class="select" style="max-width:520px;flex:1;min-width:260px"><option value="">Choose a fish…</option></select><button id="findSetup" class="select" style="width:auto;cursor:pointer;background:#39d5ff;color:#031019;font-weight:900;border:0;padding:13px 20px">🎣 Get My Setup</button></div>
-<div id="finderResult" style="margin-top:18px"></div>
-</div>
-</div></section>
-
 <section id="tackle-modifiers" class="tm-section">
 <div class="wrap"><div class="tm-shell">
 <div class="tm-head"><div><div class="tm-kicker">Fishing Planet Mechanics</div>
@@ -1323,7 +1520,7 @@ body{overflow-x:hidden}
 </nav>
 
 <section class="ps-section" id="best-setups">
-<div class="ps-head"><div><div class="ps-kicker">Curated Collection • Performance</div><h3>⭐ Best Rod + Reel + Bait Setup Library</h3><p>High-confidence starting points built around documented Fishing Planet combinations and sensible tackle balance.</p></div><span class="ps-badge">BEST PICKS</span></div>
+<div class="ps-head" id="best-setup-destination"><div><div class="ps-kicker">Curated Collection • Performance</div><h3>⭐ Best Rod + Reel + Bait Setup Library</h3><p>High-confidence starting points built around documented Fishing Planet combinations and sensible tackle balance.</p></div><span class="ps-badge">BEST PICKS</span></div>
 <div class="ps-grid">
 <article class="ps-card"><div class="ps-type">Starter Spinning</div><h4>🎣 ValueSpin + MiniSpin</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>ValueSpin 6'3" (190)</span></div><div class="ps-row"><b>Reel</b><span>MiniSpin 1200</span></div><div class="ps-row"><b>Line</b><span>Mono .007" (0.18 mm)</span></div><div class="ps-row"><b>Lure</b><span>Casting Spoon 1/6 oz (5 g), #2</span></div></div><span class="ps-tag">OFFICIAL TUTORIAL</span><p>One of the clearest documented early-game spinning combinations.</p></article>
 <article class="ps-card"><div class="ps-type">Starter Match</div><h4>🏆 OmniFloat + Minnows</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>OmniFloat 11'5" (350)</span></div><div class="ps-row"><b>Reel</b><span>Spin reel, ≥2 kg max drag</span></div><div class="ps-row"><b>Line</b><span>Braid .005" (0.12 mm)</span></div><div class="ps-row"><b>Bait</b><span>Small Minnows or Shiners</span></div></div><span class="ps-tag">OFFICIAL TUTORIAL</span><p>Built for long-cast float fishing and the Rocky Lake Trout tutorial.</p></article>
@@ -1336,7 +1533,7 @@ body{overflow-x:hidden}
 </section>
 
 <section class="ps-section" id="fully-tuned-setups">
-<div class="ps-head"><div><div class="ps-kicker">Premium Collection • Precision</div><h3>⚙️ Fully Tuned Rod + Reel + Bait Setups</h3><p>Use these as final-check templates: rod range first, reel drag second, line third, then terminal tackle and bait/lure.</p></div><span class="ps-badge">FULLY TUNED</span></div>
+<div class="ps-head" id="fully-tuned-destination"><div><div class="ps-kicker">Premium Collection • Precision</div><h3>⚙️ Fully Tuned Rod + Reel + Bait Setups</h3><p>Use these as final-check templates: rod range first, reel drag second, line third, then terminal tackle and bait/lure.</p></div><span class="ps-badge">FULLY TUNED</span></div>
 <div class="ps-grid">
 <article class="ps-card"><div class="ps-type">Tuned Spinning</div><h4>⚙️ Light Predator Tune</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>Light spinning rod matched to lure</span></div><div class="ps-row"><b>Reel</b><span>Smallest reel with adequate drag</span></div><div class="ps-row"><b>Line</b><span>Below rod maximum, strong enough for fish</span></div><div class="ps-row"><b>Lure</b><span>Small spoon, jig or shad</span></div></div><span class="ps-tag">XP / CONTROL</span><p>Ideal when you want a light balanced setup without pushing any component past its rating.</p></article>
 <article class="ps-card"><div class="ps-type">Tuned Casting</div><h4>🎯 Heavy Predator Tune</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>Heavy casting rod</span></div><div class="ps-row"><b>Reel</b><span>Max drag above line test</span></div><div class="ps-row"><b>Line</b><span>Below rod maximum</span></div><div class="ps-row"><b>Lure</b><span>Near the rod's effective lure range</span></div></div><span class="ps-tag">POWER / DISTANCE</span><p>Keep the lure inside the stated range for consistent casting performance.</p></article>
@@ -1350,7 +1547,7 @@ body{overflow-x:hidden}
 
 
 <section class="fp-section ps-section" id="feeder-pole-setups">
-<div class="ps-head"><div><div class="ps-kicker">Setup Collection • Bottom Fishing</div><h3>🪱 Feeder Pole Setup Library</h3><p>Professional feeder loadouts with rod, reel, line, feeder/sinker and bait guidance.</p></div><span class="ps-badge">FEEDER</span></div>
+<div class="ps-head" id="feeder-pole-destination"><div><div class="ps-kicker">Setup Collection • Bottom Fishing</div><h3>🪱 Feeder Pole Setup Library</h3><p>Professional feeder loadouts with rod, reel, line, feeder/sinker and bait guidance.</p></div><span class="ps-badge">FEEDER</span></div>
 <p class="fp-lead">
   A complete-looking feeder/bottom-fishing library covering picker, AllRound,
   Laker Pro, BigAlli, and specialty feeder rods. Feeder rods use quiver tips
@@ -1395,7 +1592,7 @@ body{overflow-x:hidden}
 </div>
 </section>
 
-<div class="ps-head"><div><div class="ps-kicker">Setup Collection • Casting</div><h3>🎯 Casting Pole Setup Library</h3><p>Clean, balanced casting loadouts organized around lure weight, line strength and reel drag.</p></div><span class="ps-badge">CASTING</span></div>
+<div class="ps-head" id="casting-pole-destination"><div><div class="ps-kicker">Setup Collection • Casting</div><h3>🎯 Casting Pole Setup Library</h3><p>Clean, balanced casting loadouts organized around lure weight, line strength and reel drag.</p></div><span class="ps-badge">CASTING</span></div>
 <p class="cp-lead">
   A dedicated casting-rod library covering light/medium, heavy, extra-heavy,
   jigging, and sport casting. Casting rods require casting reels, and each
@@ -1439,7 +1636,7 @@ body{overflow-x:hidden}
 </div>
 </section>
 
-<div class="ps-head"><div><div class="ps-kicker">Setup Collection • Spinning</div><h3>🎣 Spinning Pole Setup Library</h3><p>Streamlined spinning combinations for light, medium, heavy and specialty fishing.</p></div><span class="ps-badge">SPINNING</span></div>
+<div class="ps-head" id="spinning-pole-destination"><div><div class="ps-kicker">Setup Collection • Spinning</div><h3>🎣 Spinning Pole Setup Library</h3><p>Streamlined spinning combinations for light, medium, heavy and specialty fishing.</p></div><span class="ps-badge">SPINNING</span></div>
 <p class="sp-lead">
   A dedicated spinning-rod setup section with easy-to-copy combinations for
   light, medium, heavy, jigging, and specialty spinning rods. The official
@@ -1483,7 +1680,7 @@ body{overflow-x:hidden}
 </div>
 </section>
 
-<div class="ps-head"><div><div class="ps-kicker">Setup Collection • Float Fishing</div><h3>🎯 Match Pole Setup Library</h3><p>Professional float setups with long-cast match rods, reels, lines, floats and bait.</p></div><span class="ps-badge">MATCH</span></div>
+<div class="ps-head" id="match-pole-destination"><div><div class="ps-kicker">Setup Collection • Float Fishing</div><h3>🎯 Match Pole Setup Library</h3><p>Professional float setups with long-cast match rods, reels, lines, floats and bait.</p></div><span class="ps-badge">MATCH</span></div>
 <p class="mp-lead">
   A dedicated Match Pole library for float fishing. These setups are organized
   from beginner match rods through heavier match rods, with species-focused
@@ -1517,7 +1714,7 @@ body{overflow-x:hidden}
 </div>
 </section>
 
-<div class="ps-head"><div><div class="ps-kicker">Setup Collection • Value</div><h3>💰 Low-Budget Rod + Reel + Bait Setup</h3><p>Affordable, balanced combinations designed to minimize unnecessary gear upgrades.</p></div><span class="ps-badge">LOW BUDGET</span></div>
+<div class="ps-head" id="low-budget-destination"><div><div class="ps-kicker">Setup Collection • Value</div><h3>💰 Low-Budget Rod + Reel + Bait Setup</h3><p>Affordable, balanced combinations designed to minimize unnecessary gear upgrades.</p></div><span class="ps-badge">LOW BUDGET</span></div>
 <p class="lb-lead">Cheap, practical setups designed to get you fishing without buying the strongest gear. These use official Fishing Planet tutorial combinations where documented, plus clearly labeled value templates where the game does not publish a specific cheapest setup.</p>
 <div class="lb-grid">
 <article class="lb-card"><div class="lb-type">Level 1 • Telescopic</div><h4>🌱 Starter Bread Setup</h4><ul><li><b>Rod:</b> Basic Telescopic Rod</li><li><b>Reel:</b> Not required</li><li><b>Line:</b> Fluorocarbon .008" (0.2 mm)</li><li><b>Hook/Bait:</b> Small hook + Bread</li><li><b>Upgrade:</b> Red Worms</li></ul><span class="lb-price">🪙 Lowest-cost start</span><p>Best for learning the basics and catching small fish before buying specialized gear.</p></article>
@@ -3453,124 +3650,67 @@ document.addEventListener("DOMContentLoaded", function(){
 </script>
 
 
-<script id="feeder-hard-lock">
-(function(){
-  const lockedSelector = "#feeder-pole-setups";
 
-  function isLockedTarget(target){
-    return target && target.closest && target.closest(lockedSelector);
-  }
 
-  // Capture before page-level delegated click handlers can see the event.
-  ["click","dblclick","auxclick","contextmenu","pointerdown","pointerup"].forEach(function(type){
-    document.addEventListener(type, function(e){
-      if(isLockedTarget(e.target)){
-        e.preventDefault();
-        e.stopImmediatePropagation();
-      }
-    }, true);
-  });
 
-  // Stop keyboard activation if anything inside the collection somehow receives focus.
-  document.addEventListener("keydown", function(e){
-    if((e.key === "Enter" || e.key === " ") && isLockedTarget(document.activeElement)){
+
+
+
+<script id="launcher-tab-navigation">
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelectorAll(
+    '.setup-library-link[href^="#"], .setup-launcher a[href^="#"]'
+  ).forEach(function(link){
+    link.addEventListener("click", function(e){
+      const target = document.querySelector(link.getAttribute("href"));
+      if(!target) return;
       e.preventDefault();
-      e.stopImmediatePropagation();
-    }
-  }, true);
-
-  document.addEventListener("DOMContentLoaded", function(){
-    const section = document.querySelector(lockedSelector);
-    if(!section) return;
-
-    // Remove interactive semantics from every descendant.
-    section.querySelectorAll("a,button,input,select,textarea,[role],[tabindex]").forEach(function(el){
-      el.removeAttribute("onclick");
-      el.removeAttribute("href");
-      el.removeAttribute("role");
-      el.removeAttribute("tabindex");
-      el.setAttribute("aria-disabled","true");
-    });
-
-    // Also make any direct jump link to this collection inert.
-    document.querySelectorAll('a[href="#feeder-pole-setups"]').forEach(function(el){
-      el.removeAttribute("href");
-      el.setAttribute("aria-disabled","true");
-      el.setAttribute("tabindex","-1");
+      target.scrollIntoView({behavior:"smooth", block:"start"});
+      history.replaceState(null, "", link.getAttribute("href"));
     });
   });
-})();
+});
 </script>
 
 
-<script id="hard-lock-all-seven-setup-collections">
-(function(){
-  const locked = new Set([
-    "#feeder-pole-setups",
-    "#casting-pole-setups",
-    "#spinning-pole-setups",
-    "#match-pole-setups",
-    "#low-budget-setups",
-    "#best-setups",
-    "#fully-tuned-setups"
-  ]);
 
-  function insideLocked(target) {
-    return target && target.closest && Array.from(locked).some(sel => target.closest(sel));
-  }
 
-  // Capture interaction before any other page handler can respond.
-  [
-    "click","dblclick","auxclick","contextmenu",
-    "pointerdown","pointerup","pointermove",
-    "mousedown","mouseup","touchstart","touchend"
-  ].forEach(function(type){
-    document.addEventListener(type, function(e){
-      if (insideLocked(e.target)) {
-        e.preventDefault();
-        e.stopImmediatePropagation();
-      }
-    }, true);
-  });
 
-  document.addEventListener("keydown", function(e){
-    if ((e.key === "Enter" || e.key === " ") && insideLocked(document.activeElement)) {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-    }
-  }, true);
 
-  document.addEventListener("DOMContentLoaded", function(){
-    locked.forEach(function(sel){
-      const section = document.querySelector(sel);
-      if (!section) return;
 
-      // Strip interactive semantics from anything inside the locked collection.
-      section.querySelectorAll(
-        "a,button,input,select,textarea,[role],[tabindex],[onclick]"
-      ).forEach(function(el){
-        el.removeAttribute("href");
-        el.removeAttribute("onclick");
-        el.removeAttribute("role");
-        el.removeAttribute("tabindex");
-        el.setAttribute("aria-disabled","true");
-      });
-    });
 
-    // Also disable any top-directory links that point to these seven collections.
-    document.querySelectorAll("a[href]").forEach(function(link){
-      if (locked.has(link.getAttribute("href"))) {
-        link.removeAttribute("href");
-        link.setAttribute("aria-disabled","true");
-        link.setAttribute("tabindex","-1");
-        link.addEventListener("click", function(e){
-          e.preventDefault();
-          e.stopImmediatePropagation();
-        }, true);
-      }
+<script id="working-library-navigation">
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelectorAll('.setup-launcher-wide a[href^="#"]').forEach(function(link){
+    link.addEventListener("click", function(event){
+      const id = link.getAttribute("href").slice(1);
+      const target = document.getElementById(id);
+      if(!target) return;
+      event.preventDefault();
+      target.scrollIntoView({behavior:"smooth", block:"start"});
+      history.replaceState(null, "", "#" + id);
     });
   });
-})();
+});
+</script>
+
+
+<script id="setup-tabs-exact-navigation">
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".setup-target-link").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      const id = link.getAttribute("href");
+      const target = id ? document.querySelector(id) : null;
+      if (!target) return;
+      event.preventDefault();
+      const header = document.querySelector("header, .site-header, .top-nav, nav");
+      const offset = header ? header.getBoundingClientRect().height + 18 : 18;
+      const y = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+      history.replaceState(null, "", id);
+    });
+  });
+});
 </script>
 
 </body>
