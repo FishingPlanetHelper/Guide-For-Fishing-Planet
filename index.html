@@ -646,8 +646,369 @@ window.addEventListener('unhandledrejection', function (event) {
   }
 </style>
 
+
+<style id="minnow-bait-note">
+  .minnow-bait-note{
+    margin:10px 0 0;padding:9px 12px;border:1px solid #1d4f60;
+    border-radius:10px;background:#061923;color:#9fc4cf;font-size:.78rem;
+  }
+  .minnow-bait-note b{color:#dff8fb}
+</style>
+
+<style id="tackle-modifiers-style">
+.tm-section{padding:56px 0 70px}.tm-shell{position:relative;overflow:hidden;background:radial-gradient(700px 330px at 100% 0%,#29d8ff18,transparent 70%),linear-gradient(145deg,#0d3040,#071923 72%);border:1px solid #286276;border-radius:24px;padding:30px;box-shadow:0 24px 70px #0006}
+.tm-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:24px}.tm-kicker{color:var(--cyan);font-size:.68rem;text-transform:uppercase;letter-spacing:2px;font-weight:950;margin-bottom:8px}.tm-head h2{margin:0;font-size:clamp(2rem,4vw,3rem);letter-spacing:-1.8px;line-height:1}.tm-head p{max-width:820px;margin:10px 0 0;color:var(--muted);line-height:1.55}.tm-label{flex:0 0 auto;padding:9px 12px;border:1px solid #286276;border-radius:999px;background:#061923aa;color:#bfeaf2;font-size:.72rem;font-weight:850;white-space:nowrap}
+.tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tm-card{position:relative;min-height:205px;background:linear-gradient(155deg,#0a202b,#061923);border:1px solid #194150;border-radius:18px;padding:21px}.tm-card h3{margin:0 0 9px;font-size:1.05rem}.tm-card p{margin:0 0 10px;color:var(--muted);font-size:.82rem;line-height:1.58}.tm-card ul{margin:8px 0 0;padding-left:18px;color:#b9d1d8;font-size:.78rem;line-height:1.65}.tm-icon{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:#082a36;border:1px solid #286276;font-size:1.2rem;margin-bottom:15px}
+.tm-note{margin-top:16px;padding:14px 16px;border:1px solid #24596b;border-radius:14px;background:#061923;color:#a9c5ce;font-size:.79rem;line-height:1.6}.tm-note b{color:#e5f8fb}.tm-table-wrap{overflow:auto;margin-top:18px;border:1px solid #194150;border-radius:14px}.tm-table{width:100%;border-collapse:collapse;min-width:720px}.tm-table th,.tm-table td{padding:11px 12px;text-align:left;border-bottom:1px solid #173b49;font-size:.77rem;vertical-align:top}.tm-table th{color:#dff8fb;background:#082530;font-weight:900}.tm-table td{color:#a9c5ce;background:#061923}.tm-table tr:last-child td{border-bottom:0}
+@media(max-width:900px){.tm-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.tm-head{align-items:flex-start;flex-direction:column}.tm-grid{grid-template-columns:1fr}.tm-shell{padding:22px}}
+</style>
+
+<style id="xp-optimizer-style">
+.xp-opt{margin-top:28px;padding:24px;border:1px solid #286276;border-radius:20px;background:linear-gradient(145deg,#0a2632,#061923)}
+.xp-opt h3{margin:0 0 7px;font-size:1.45rem}.xp-opt>p{margin:0 0 18px;color:var(--muted);line-height:1.55;font-size:.84rem}
+.xp-steps{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.xp-step{padding:17px;border:1px solid #194150;border-radius:15px;background:#071d27}
+.xp-num{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#0b3a49;color:#dff8fb;font-weight:950;font-size:.75rem;margin-bottom:10px}
+.xp-step h4{margin:0 0 6px;font-size:.95rem}.xp-step p{margin:0;color:#a9c5ce;font-size:.78rem;line-height:1.55}
+.xp-good{margin-top:14px;padding:15px;border:1px solid #246b58;border-radius:14px;background:#071f1d;color:#bce9d9;font-size:.8rem;line-height:1.6}
+.xp-good b{color:#e8fff6}.xp-warn{margin-top:10px;padding:15px;border:1px solid #695126;border-radius:14px;background:#211b0a;color:#e1cf9b;font-size:.78rem;line-height:1.55}
+.xp-table{margin-top:16px;overflow:auto;border:1px solid #194150;border-radius:13px}.xp-table table{width:100%;border-collapse:collapse;min-width:680px}.xp-table th,.xp-table td{padding:10px 11px;border-bottom:1px solid #173b49;text-align:left;font-size:.75rem;vertical-align:top}.xp-table th{background:#082530;color:#dff8fb}.xp-table td{background:#061923;color:#a9c5ce}.xp-table tr:last-child td{border-bottom:0}
+@media(max-width:700px){.xp-steps{grid-template-columns:1fr}}
+</style>
+
+
+<style id="tackle-example-style">
+.tackle-example{margin-top:24px;padding:24px;border:1px solid #286276;border-radius:20px;background:linear-gradient(145deg,#0a2632,#061923)}
+.tackle-example h3{margin:0 0 8px;font-size:1.45rem}.tackle-example .lead{margin:0 0 18px;color:var(--muted);font-size:.84rem;line-height:1.55}
+.example-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.example-card{border:1px solid #194150;border-radius:15px;padding:17px;background:#071d27}
+.example-card .emoji{font-size:1.5rem;margin-bottom:8px}.example-card h4{margin:0 0 5px}.example-card p{margin:0;color:#a9c5ce;font-size:.78rem;line-height:1.55}
+.example-result{margin-top:14px;padding:16px;border:1px solid #246b58;border-radius:14px;background:#071f1d;color:#bce9d9;font-size:.8rem;line-height:1.6}
+.example-result b{color:#e8fff6}.example-compare{margin-top:14px;overflow:auto;border:1px solid #194150;border-radius:13px}.example-compare table{width:100%;border-collapse:collapse;min-width:650px}.example-compare th,.example-compare td{padding:10px 11px;border-bottom:1px solid #173b49;text-align:left;font-size:.75rem}.example-compare th{background:#082530;color:#dff8fb}.example-compare td{background:#061923;color:#a9c5ce}
+@media(max-width:700px){.example-grid{grid-template-columns:1fr}}
+</style>
+
+
+<style id="fully-tuned-setups-style">
+.fts{margin-top:26px;padding:24px;border:1px solid #286276;border-radius:20px;background:linear-gradient(145deg,#0a2632,#061923)}
+.fts h3{margin:0 0 8px;font-size:1.45rem}.fts .lead{margin:0 0 18px;color:var(--muted);font-size:.84rem;line-height:1.55}
+.fts-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}.fts-card{border:1px solid #194150;border-radius:16px;padding:18px;background:#071d27}
+.fts-card h4{margin:0 0 9px;font-size:1rem}.fts-card p{margin:0 0 10px;color:#a9c5ce;font-size:.78rem;line-height:1.55}.fts-card ul{margin:0;padding-left:18px;color:#b9d1d8;font-size:.77rem;line-height:1.65}
+.fts-badge{display:inline-block;margin-bottom:10px;padding:5px 8px;border-radius:8px;background:#0b3a49;border:1px solid #286276;color:#dff8fb;font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.6px}
+.fts-note{margin-top:15px;padding:15px;border:1px solid #286276;border-radius:13px;background:#061923;color:#a9c5ce;font-size:.78rem;line-height:1.6}.fts-note b{color:#e5f8fb}
+@media(max-width:700px){.fts-grid{grid-template-columns:1fr}}
+</style>
+
+
+<style id="all-rod-setups-style">
+.all-rods{margin-top:26px;padding:26px;border:1px solid #286276;border-radius:22px;background:linear-gradient(145deg,#0a2632,#061923)}
+.all-rods h3{margin:0 0 8px;font-size:1.55rem}.all-rods .lead{margin:0 0 18px;color:var(--muted);line-height:1.6;font-size:.84rem}
+.rod-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.rod-filter{border:1px solid #286276;background:#071d27;color:#b9d1d8;border-radius:999px;padding:8px 12px;font-weight:850;font-size:.72rem;cursor:pointer}.rod-filter.active{background:#0b3a49;color:#e8fbff}
+.rod-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.rod-card{border:1px solid #194150;border-radius:16px;padding:17px;background:#071d27}.rod-card h4{margin:0 0 8px}.rod-card .type{color:#72d9ef;font-size:.68rem;text-transform:uppercase;font-weight:900;letter-spacing:.8px}.rod-card ul{margin:9px 0 0;padding-left:18px;color:#b9d1d8;font-size:.76rem;line-height:1.65}.rod-card .why{margin-top:10px;color:#93b2bc;font-size:.75rem;line-height:1.5}
+.rod-source{margin-top:16px;padding:14px;border:1px solid #24596b;border-radius:13px;color:#9fbcc5;font-size:.76rem;line-height:1.6;background:#061923}.rod-source b{color:#e5f8fb}
+@media(max-width:950px){.rod-list{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.rod-list{grid-template-columns:1fr}}
+</style>
+
+<style id="low-budget-style">
+.lb-section{margin-top:28px;padding:26px;border:1px solid #286276;border-radius:22px;background:linear-gradient(145deg,#102d38,#061923)}
+.lb-section h3{margin:0 0 8px;font-size:1.55rem}.lb-lead{margin:0 0 18px;color:var(--muted);font-size:.84rem;line-height:1.6}
+.lb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.lb-card{padding:18px;border:1px solid #194150;border-radius:16px;background:#071d27;transition:.2s}.lb-card:hover{transform:translateY(-2px);border-color:#3b8193}
+.lb-card .lb-type{font-size:.66rem;color:#72d9ef;font-weight:950;letter-spacing:1px;text-transform:uppercase}.lb-card h4{margin:6px 0 8px;font-size:1rem}.lb-card ul{margin:0;padding-left:18px;color:#b9d1d8;font-size:.76rem;line-height:1.7}.lb-card p{margin:10px 0 0;color:#8eacb6;font-size:.73rem;line-height:1.5}
+.lb-price{display:inline-block;margin-top:10px;padding:5px 8px;border-radius:8px;background:#123729;border:1px solid #2d6a4d;color:#bde9d2;font-size:.66rem;font-weight:900}
+.lb-tip{margin-top:16px;padding:15px;border:1px solid #286276;border-radius:14px;background:#061923;color:#a9c5ce;font-size:.78rem;line-height:1.6}.lb-tip b{color:#e5f8fb}
+@media(max-width:950px){.lb-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.lb-grid{grid-template-columns:1fr}}
+</style>
+
+<style id="match-pole-style">
+.mp-section{margin-top:28px;padding:26px;border:1px solid #286276;border-radius:22px;background:linear-gradient(145deg,#0a2b36,#061923)}
+.mp-section h3{margin:0 0 8px;font-size:1.55rem}.mp-lead{margin:0 0 18px;color:var(--muted);font-size:.84rem;line-height:1.6}
+.mp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.mp-card{padding:18px;border:1px solid #194150;border-radius:16px;background:#071d27;transition:.2s}.mp-card:hover{transform:translateY(-2px);border-color:#3b8193}
+.mp-type{font-size:.66rem;color:#72d9ef;font-weight:950;letter-spacing:1px;text-transform:uppercase}.mp-card h4{margin:6px 0 8px;font-size:1rem}.mp-card ul{margin:0;padding-left:18px;color:#b9d1d8;font-size:.76rem;line-height:1.7}.mp-card p{margin:10px 0 0;color:#8eacb6;font-size:.73rem;line-height:1.5}
+.mp-bait{display:inline-block;margin-top:10px;padding:5px 8px;border-radius:8px;background:#173b2e;border:1px solid #2f7255;color:#bde9d2;font-size:.66rem;font-weight:900}
+.mp-info{margin-top:16px;padding:15px;border:1px solid #286276;border-radius:14px;background:#061923;color:#a9c5ce;font-size:.78rem;line-height:1.6}.mp-info b{color:#e5f8fb}
+@media(max-width:950px){.mp-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.mp-grid{grid-template-columns:1fr}}
+</style>
+
+
+<style id="spinning-pole-style">
+.sp-section{margin-top:28px;padding:26px;border:1px solid #286276;border-radius:22px;background:linear-gradient(145deg,#082b37,#061923)}
+.sp-section h3{margin:0 0 8px;font-size:1.55rem}.sp-lead{margin:0 0 18px;color:var(--muted);font-size:.84rem;line-height:1.6}
+.sp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.sp-card{padding:18px;border:1px solid #194150;border-radius:16px;background:#071d27;transition:.2s}.sp-card:hover{transform:translateY(-2px);border-color:#43a1b8}
+.sp-type{font-size:.66rem;color:#72d9ef;font-weight:950;letter-spacing:1px;text-transform:uppercase}.sp-card h4{margin:6px 0 8px;font-size:1rem}.sp-card ul{margin:0;padding-left:18px;color:#b9d1d8;font-size:.76rem;line-height:1.7}.sp-card p{margin:10px 0 0;color:#8eacb6;font-size:.73rem;line-height:1.5}
+.sp-tag{display:inline-block;margin-top:10px;padding:5px 8px;border-radius:8px;background:#10374a;border:1px solid #286276;color:#c9f1fb;font-size:.66rem;font-weight:900}
+.sp-info{margin-top:16px;padding:15px;border:1px solid #286276;border-radius:14px;background:#061923;color:#a9c5ce;font-size:.78rem;line-height:1.6}.sp-info b{color:#e5f8fb}
+@media(max-width:950px){.sp-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.sp-grid{grid-template-columns:1fr}}
+</style>
+
+
+<style id="casting-pole-style">
+.cp-section{margin-top:28px;padding:26px;border:1px solid #4b6d8b;border-radius:22px;background:linear-gradient(145deg,#122b40,#071923)}
+.cp-section h3{margin:0 0 8px;font-size:1.55rem}.cp-lead{margin:0 0 18px;color:var(--muted);font-size:.84rem;line-height:1.6}
+.cp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.cp-card{padding:18px;border:1px solid #24485e;border-radius:16px;background:#071d27;transition:.2s}.cp-card:hover{transform:translateY(-2px);border-color:#63a8d1}
+.cp-type{font-size:.66rem;color:#8dd5ff;font-weight:950;letter-spacing:1px;text-transform:uppercase}.cp-card h4{margin:6px 0 8px;font-size:1rem}.cp-card ul{margin:0;padding-left:18px;color:#b9d1d8;font-size:.76rem;line-height:1.7}.cp-card p{margin:10px 0 0;color:#8eacb6;font-size:.73rem;line-height:1.5}
+.cp-tag{display:inline-block;margin-top:10px;padding:5px 8px;border-radius:8px;background:#17384b;border:1px solid #386e8b;color:#cceeff;font-size:.66rem;font-weight:900}
+.cp-info{margin-top:16px;padding:15px;border:1px solid #38617a;border-radius:14px;background:#061923;color:#a9c5ce;font-size:.78rem;line-height:1.6}.cp-info b{color:#e5f8fb}
+@media(max-width:950px){.cp-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.cp-grid{grid-template-columns:1fr}}
+</style>
+
+
+<style id="feeder-pole-style">
+.fp-section{margin-top:28px;padding:26px;border:1px solid #496f62;border-radius:22px;background:linear-gradient(145deg,#0b302d,#061923)}
+.fp-section h3{margin:0 0 8px;font-size:1.55rem}.fp-lead{margin:0 0 18px;color:var(--muted);font-size:.84rem;line-height:1.6}
+.fp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.fp-card{padding:18px;border:1px solid #235149;border-radius:16px;background:#071d27;transition:.2s}.fp-card:hover{transform:translateY(-2px);border-color:#58a995}
+.fp-type{font-size:.66rem;color:#80dfc4;font-weight:950;letter-spacing:1px;text-transform:uppercase}.fp-card h4{margin:6px 0 8px;font-size:1rem}.fp-card ul{margin:0;padding-left:18px;color:#b9d1d8;font-size:.76rem;line-height:1.7}.fp-card p{margin:10px 0 0;color:#8eacb6;font-size:.73rem;line-height:1.5}
+.fp-tag{display:inline-block;margin-top:10px;padding:5px 8px;border-radius:8px;background:#153b35;border:1px solid #397568;color:#c9f4e8;font-size:.66rem;font-weight:900}
+.fp-info{margin-top:16px;padding:15px;border:1px solid #397568;border-radius:14px;background:#061923;color:#a9c5ce;font-size:.78rem;line-height:1.6}.fp-info b{color:#e5f8fb}
+@media(max-width:950px){.fp-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.fp-grid{grid-template-columns:1fr}}
+</style>
+
+
+<style id="professional-setups">
+:root{--ps-bg:#07151c;--ps-panel:#0b2029;--ps-panel2:#0d2732;--ps-border:#244957;--ps-accent:#64d8ed;--ps-green:#65d7ae;--ps-gold:#f1c76b;--ps-text:#eaf7fa;--ps-muted:#94b0b9}
+.ps-section{margin:32px 0;padding:30px;border:1px solid var(--ps-border);border-radius:24px;background:radial-gradient(circle at 90% 0%,rgba(100,216,237,.10),transparent 35%),linear-gradient(145deg,var(--ps-panel),var(--ps-bg));box-shadow:0 18px 45px rgba(0,0,0,.22)}
+.ps-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:22px}.ps-kicker{font-size:.66rem;font-weight:950;letter-spacing:1.7px;color:var(--ps-accent);text-transform:uppercase}.ps-head h3{margin:5px 0 7px;font-size:1.65rem}.ps-head p{margin:0;color:var(--ps-muted);font-size:.82rem;line-height:1.65;max-width:760px}.ps-badge{white-space:nowrap;padding:8px 11px;border:1px solid var(--ps-border);border-radius:999px;color:#cfeef4;background:#081b23;font-size:.68rem;font-weight:900}
+.ps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.ps-card{position:relative;padding:19px;border:1px solid var(--ps-border);border-radius:17px;background:linear-gradient(160deg,#0b222c,#071820);transition:transform .18s,border-color .18s,box-shadow .18s}.ps-card:hover{transform:translateY(-3px);border-color:#3d7888;box-shadow:0 12px 28px rgba(0,0,0,.2)}.ps-card:before{content:"";position:absolute;left:0;top:16px;bottom:16px;width:3px;border-radius:4px;background:var(--ps-accent);opacity:.7}.ps-type{margin-left:9px;font-size:.62rem;font-weight:950;letter-spacing:1.2px;color:var(--ps-accent);text-transform:uppercase}.ps-card h4{margin:7px 0 10px 9px;font-size:1rem;color:var(--ps-text)}.ps-specs{display:grid;gap:5px;margin-left:9px}.ps-row{display:grid;grid-template-columns:74px 1fr;gap:8px;font-size:.72rem;line-height:1.45}.ps-row b{color:#7fa7b2}.ps-row span{color:#d1e3e7}.ps-card p{margin:11px 0 0 9px;color:var(--ps-muted);font-size:.7rem;line-height:1.5}.ps-tag{display:inline-block;margin:11px 0 0 9px;padding:5px 8px;border-radius:8px;background:#102e38;border:1px solid #2b5966;color:#bfeaf2;font-size:.61rem;font-weight:950}.ps-footer{margin-top:17px;padding:15px 17px;border:1px solid var(--ps-border);border-radius:14px;background:#06151c;color:#9db9c2;font-size:.72rem;line-height:1.65}.ps-footer b{color:#e3f7fa}.ps-index{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}.ps-index a{padding:7px 10px;border:1px solid var(--ps-border);border-radius:999px;color:#bcd8df;background:#081a22;text-decoration:none;font-size:.62rem;font-weight:850}.ps-index a:hover{border-color:#4d8290;color:#fff}
+@media(max-width:950px){.ps-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:650px){.ps-grid{grid-template-columns:1fr}.ps-head{display:block}.ps-badge{display:inline-block;margin-top:12px}}
+</style>
+
+
+<style id="top-setup-center">
+.top-setup-center{max-width:1398px;margin:22px auto 34px;padding:0 26px;position:relative;z-index:5}
+.setup-hero{padding:30px;border:1px solid #27586a;border-radius:24px;background:radial-gradient(circle at 85% 10%,rgba(41,216,255,.16),transparent 32%),radial-gradient(circle at 8% 100%,rgba(103,228,154,.09),transparent 30%),linear-gradient(145deg,#0b2631,#06161e);box-shadow:0 20px 55px rgba(0,0,0,.25)}
+.setup-hero-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.setup-eyebrow{font-size:.63rem;letter-spacing:1.8px;font-weight:950;color:#29d8ff;text-transform:uppercase}
+.setup-hero h1{margin:7px 0 8px;font-size:clamp(1.7rem,3vw,2.55rem);letter-spacing:-.7px}
+.setup-hero p{margin:0;color:#93adb7;font-size:.82rem;line-height:1.65;max-width:800px}
+.setup-status{display:flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid #28586a;border-radius:999px;background:#071a22;color:#bce7ee;font-size:.65rem;font-weight:900;white-space:nowrap}
+.setup-status i{width:7px;height:7px;border-radius:50%;background:#67e49a;box-shadow:0 0 12px #67e49a;display:block}
+.setup-launcher{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:24px}
+.setup-launcher a{min-height:92px;padding:13px 11px;border:1px solid #214958;border-radius:14px;background:linear-gradient(160deg,#0b2029,#07171e);text-decoration:none;color:#dff5f8;transition:.18s ease;display:flex;flex-direction:column;justify-content:space-between}
+.setup-launcher a:hover{transform:translateY(-3px);border-color:#3b8192;background:#0c2833;box-shadow:0 12px 25px rgba(0,0,0,.2)}
+.setup-icon{font-size:1.25rem}.setup-name{font-size:.68rem;font-weight:900;line-height:1.25}.setup-meta{font-size:.57rem;color:#7696a1;margin-top:4px}
+.setup-top-label{margin:25px 0 12px;display:flex;align-items:center;gap:10px;font-size:.67rem;color:#6f909a;font-weight:950;letter-spacing:1.1px;text-transform:uppercase}
+.setup-top-label:after{content:"";height:1px;background:#1d3e49;flex:1}
+#setup-center-moved>.ps-section,#setup-center-moved>.fp-section,#setup-center-moved>.cp-section,#setup-center-moved>.sp-section,#setup-center-moved>.mp-section{margin-top:18px}
+@media(max-width:1100px){.setup-launcher{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:700px){.top-setup-center{padding:0 14px}.setup-hero{padding:22px}.setup-hero-top{display:block}.setup-status{display:inline-flex;margin-top:14px}.setup-launcher{grid-template-columns:repeat(2,1fr)}}
+</style>
+
+
+<style id="complete-site-compatibility">
+html{scroll-behavior:smooth}
+body{overflow-x:hidden}
+#setup-center-moved{scroll-margin-top:85px}
+#feeder-pole-setups,#casting-pole-setups,#spinning-pole-setups,#match-pole-setups,
+#low-budget-setups,#best-setups,#fully-tuned-setups{scroll-margin-top:95px}
+.setup-launcher a{cursor:pointer}
+</style>
+
+
+<style id="complete-top-directory-style">
+.setup-directory{margin-top:22px}
+.setup-directory-title{display:flex;align-items:center;gap:12px;margin:22px 0 10px;color:#6f909a;font-size:.62rem;font-weight:950;letter-spacing:1.35px;text-transform:uppercase}
+.setup-directory-title:after{content:"";height:1px;flex:1;background:#1d3e49}
+.setup-launcher-wide{grid-template-columns:repeat(6,1fr)}
+.setup-launcher .disabled-library{cursor:default!important;opacity:.62;filter:saturate(.55)}
+.setup-launcher .disabled-library:hover{transform:none!important;border-color:#214958!important;background:linear-gradient(160deg,#0b2029,#07171e)!important;box-shadow:none!important}
+.setup-launcher .disabled-library .setup-name:after{content:" • UNCLICKABLE";font-size:.47rem;color:#718d96}
+@media(max-width:1100px){.setup-launcher-wide{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:700px){.setup-launcher-wide{grid-template-columns:repeat(2,1fr)}}
+</style>
+
+
+<style id="restored-content-divider">
+.setup-restored-divider{max-width:1398px;margin:8px auto 20px;padding:0 26px;display:flex;align-items:center;gap:12px;color:#64828c;font-size:.6rem;font-weight:950;letter-spacing:1.4px}
+.setup-restored-divider:before,.setup-restored-divider:after{content:"";height:1px;background:#1b3a45;flex:1}
+@media(max-width:700px){.setup-restored-divider{padding:0 14px}}
+</style>
+
+
+<style id="unclickable-new-pole-setups">
+.setup-library-unclickable{
+  min-height:92px;
+  padding:13px 11px;
+  border:1px solid #214958;
+  border-radius:14px;
+  background:linear-gradient(160deg,#0b2029,#07171e);
+  color:#dff5f8;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  cursor:default!important;
+  user-select:none;
+  opacity:.72;
+  filter:saturate(.72);
+  pointer-events:none;
+}
+.setup-library-unclickable .setup-meta{color:#718d96}
+.setup-library-unclickable .setup-name:after{
+  content:" • UNCLICKABLE";
+  font-size:.46rem;
+  letter-spacing:.4px;
+  color:#718d96;
+}
+</style>
+
+
+<style id="all-setup-collections-unclickable">
+.setup-library-unclickable{
+  min-height:92px;
+  padding:13px 11px;
+  border:1px solid #214958;
+  border-radius:14px;
+  background:linear-gradient(160deg,#0b2029,#07171e);
+  color:#dff5f8;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  cursor:default!important;
+  user-select:none;
+  pointer-events:none;
+  opacity:.72;
+  filter:saturate(.72);
+}
+.setup-library-unclickable .setup-meta{color:#718d96}
+.setup-library-unclickable .setup-name:after{
+  content:" • UNCLICKABLE";
+  font-size:.46rem;
+  letter-spacing:.4px;
+  color:#718d96;
+}
+</style>
+
+
+<style id="feeder-collection-unclickable">
+/* Feeder Pole Setup Library — display only */
+#feeder-pole-setups{
+  cursor:default!important;
+}
+#feeder-pole-setups a,
+#feeder-pole-setups button,
+#feeder-pole-setups [role="button"],
+#feeder-pole-setups .fp-card{
+  cursor:default!important;
+}
+#feeder-pole-setups a,
+#feeder-pole-setups button,
+#feeder-pole-setups [role="button"]{
+  pointer-events:none!important;
+}
+#feeder-pole-setups .fp-card,
+#feeder-pole-setups .ps-card{
+  cursor:default!important;
+}
+</style>
+
+
+<style id="feeder-collection-completely-locked">
+/* HARD LOCK: the entire Feeder Pole Setup Library is display-only. */
+#feeder-pole-setups{
+  position:relative!important;
+  cursor:default!important;
+}
+#feeder-pole-setups::after{
+  content:"";
+  position:absolute;
+  z-index:999999;
+  inset:0;
+  display:block;
+  cursor:default!important;
+  background:transparent;
+  pointer-events:auto!important;
+}
+#feeder-pole-setups a,
+#feeder-pole-setups button,
+#feeder-pole-setups input,
+#feeder-pole-setups select,
+#feeder-pole-setups textarea,
+#feeder-pole-setups [role="button"],
+#feeder-pole-setups [onclick]{
+  pointer-events:none!important;
+  cursor:default!important;
+}
+#feeder-pole-setups *{
+  cursor:default!important;
+}
+</style>
+
+
+<style id="all-seven-setup-collections-hard-lock">
+/* HARD LOCK: all seven setup collections are display-only. */
+#feeder-pole-setups,
+#casting-pole-setups,
+#spinning-pole-setups,
+#match-pole-setups,
+#low-budget-setups,
+#best-setups,
+#fully-tuned-setups {
+  position:relative !important;
+  cursor:default !important;
+}
+
+/* Transparent shield prevents mouse/touch interaction anywhere inside each collection. */
+#feeder-pole-setups::after,
+#casting-pole-setups::after,
+#spinning-pole-setups::after,
+#match-pole-setups::after,
+#low-budget-setups::after,
+#best-setups::after,
+#fully-tuned-setups::after {
+  content:"";
+  position:absolute;
+  z-index:999999;
+  inset:0;
+  display:block;
+  background:transparent;
+  pointer-events:auto !important;
+  cursor:default !important;
+}
+
+#feeder-pole-setups *,
+#casting-pole-setups *,
+#spinning-pole-setups *,
+#match-pole-setups *,
+#low-budget-setups *,
+#best-setups *,
+#fully-tuned-setups * {
+  cursor:default !important;
+}
+
+#feeder-pole-setups a,
+#feeder-pole-setups button,
+#feeder-pole-setups [role="button"],
+#casting-pole-setups a,
+#casting-pole-setups button,
+#casting-pole-setups [role="button"],
+#spinning-pole-setups a,
+#spinning-pole-setups button,
+#spinning-pole-setups [role="button"],
+#match-pole-setups a,
+#match-pole-setups button,
+#match-pole-setups [role="button"],
+#low-budget-setups a,
+#low-budget-setups button,
+#low-budget-setups [role="button"],
+#best-setups a,
+#best-setups button,
+#best-setups [role="button"],
+#fully-tuned-setups a,
+#fully-tuned-setups button,
+#fully-tuned-setups [role="button"] {
+  pointer-events:none !important;
+  cursor:default !important;
+}
+</style>
+
 </head>
 <body id="top">
+
+
+
+
+
+<div class="setup-restored-divider">
+  <span>ALL ORIGINAL FISH DATABASE CONTENT</span>
+</div>
+
+
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header>
 <div class="wrap">
@@ -701,7 +1062,7 @@ window.addEventListener('unhandledrejection', function (event) {
       </details>
 
       <a class="nav-link" href="#database">Fish Database</a>
-      <a class="nav-link" href="#setups">Setups</a>
+      <a class="nav-link active" href="#setup-center-moved">Setups</a>
       <a class="nav-link" href="#notes">Notes</a>
     </div>
 
@@ -777,6 +1138,65 @@ window.addEventListener('unhandledrejection', function (event) {
 <div class="hero-panel"><div class="eyebrow">QUICK START</div><h2>Don't know what to use?</h2><p>Use the <b>What should I use?</b> finder, choose your target fish, and get a complete starting rig.</p><div class="stat-grid"><div class="stat"><strong>40+</strong><small>fish setups</small></div><div class="stat"><strong>10</strong><small>data fields</small></div><div class="stat"><strong>∞</strong><small>tuning options</small></div></div></div>
 </div></div></section>
 
+<section class="top-setup-center" aria-label="Professional Setup Center">
+  <div class="setup-hero">
+    <div class="setup-hero-top">
+      <div>
+        <div class="setup-eyebrow">Fishing Planet • Professional Setup Center</div>
+        <h1>Rod + Reel + Bait Setup Library</h1>
+        <p>Everything new is now organized at the top: Feeder, Casting, Spinning, Match, Low-Budget, Best Setups, and Fully Tuned setups — with one clean professional launch area.</p>
+      </div>
+      <div class="setup-status"><i></i> SETUP CENTER ONLINE</div>
+    </div>
+
+    
+<div class="setup-directory">
+  <div class="setup-directory-title">NEW • SETUP LIBRARIES</div>
+  <div class="setup-launcher">
+    <div class="setup-library-unclickable" data-section="feeder-pole-setups"><span class="setup-icon">🪱</span><span class="setup-name">Feeder Pole</span><span class="setup-meta">Bottom fishing</span></div>
+    <div class="setup-library-unclickable" data-section="casting-pole-setups"><span class="setup-icon">🎯</span><span class="setup-name">Casting Pole</span><span class="setup-meta">Power casting</span></div>
+    <div class="setup-library-unclickable" data-section="spinning-pole-setups"><span class="setup-icon">🎣</span><span class="setup-name">Spinning Pole</span><span class="setup-meta">All-purpose</span></div>
+    <div class="setup-library-unclickable" data-section="match-pole-setups"><span class="setup-icon">🏆</span><span class="setup-name">Match Pole</span><span class="setup-meta">Float fishing</span></div>
+    <div class="setup-library-unclickable" data-section="low-budget-setups"><span class="setup-icon">💰</span><span class="setup-name">Low-Budget</span><span class="setup-meta">Save credits</span></div>
+    <div class="setup-library-unclickable" data-section="best-setups"><span class="setup-icon">⭐</span><span class="setup-name">Best Setups</span><span class="setup-meta">Top picks</span></div>
+    <div class="setup-library-unclickable" data-section="fully-tuned-setups"><span class="setup-icon">⚙️</span><span class="setup-name">Fully Tuned</span><span class="setup-meta">Precision builds</span></div>
+  </div>
+
+  <div class="setup-directory-title">DATABASE • LURE / TACKLE LIBRARIES</div>
+  <div class="setup-launcher setup-launcher-wide">
+    <a href="#lure-library"><span class="setup-icon">🥄</span><span class="setup-name">Spoon / Jig / Shad</span><span class="setup-meta">Lure library</span></a>
+    <a href="#jighead-library"><span class="setup-icon">🪝</span><span class="setup-name">Jig Heads</span><span class="setup-meta">Complete library</span></a>
+    <a href="#bobber-library"><span class="setup-icon">🔴</span><span class="setup-name">Bobbers</span><span class="setup-meta">Complete library</span></a>
+    <a href="#sinker-library"><span class="setup-icon">⚓</span><span class="setup-name">Sinkers</span><span class="setup-meta">Complete library</span></a>
+    <a href="#rig-library"><span class="setup-icon">🧵</span><span class="setup-name">Rigs</span><span class="setup-meta">Complete library</span></a>
+    <a href="#feeder-library"><span class="setup-icon">🧺</span><span class="setup-name">Feeders</span><span class="setup-meta">Complete library</span></a>
+    <a href="#softbait-library"><span class="setup-icon">🪱</span><span class="setup-name">Soft Baits</span><span class="setup-meta">Complete library</span></a>
+    <a class="disabled-library" aria-disabled="true" tabindex="-1"><span class="setup-icon">🌊</span><span class="setup-name">Saltwater Lure</span><span class="setup-meta">Library locked</span></a>
+    <a href="#spoon-spinner-library"><span class="setup-icon">🌀</span><span class="setup-name">Spoons & Spinners</span><span class="setup-meta">Lure library</span></a>
+    <a href="#hardbait-library"><span class="setup-icon">🐟</span><span class="setup-name">Hard Baits</span><span class="setup-meta">Lure library</span></a>
+    <a href="#hook-library"><span class="setup-icon">🪝</span><span class="setup-name">Hooks</span><span class="setup-meta">Complete library</span></a>
+    <a href="#bait-library"><span class="setup-icon">🪱</span><span class="setup-name">Baits</span><span class="setup-meta">Complete library</span></a>
+  </div>
+
+  <div class="setup-directory-title">DATABASE • GEAR / EQUIPMENT</div>
+  <div class="setup-launcher setup-launcher-wide">
+    <a href="#saltwater-baits-library"><span class="setup-icon">🌴</span><span class="setup-name">Saltwater Baits</span><span class="setup-meta">Saltwater bait library</span></a>
+    <a href="#keep-nets-stringers"><span class="setup-icon">🧺</span><span class="setup-name">Fish Handling</span><span class="setup-meta">Keep nets & stringers</span></a>
+    <a href="#outfits-library"><span class="setup-icon">🎒</span><span class="setup-name">Angler Equipment</span><span class="setup-meta">Boxes, cases & gear</span></a>
+    <a href="#lines-library"><span class="setup-icon">〰️</span><span class="setup-name">Fishing Line</span><span class="setup-meta">Line library</span></a>
+    <a href="#leaders-library"><span class="setup-icon">🔗</span><span class="setup-name">Terminal Tackle</span><span class="setup-meta">Leaders & terminal gear</span></a>
+    <a href="#reels-library"><span class="setup-icon">⚙️</span><span class="setup-name">Reels</span><span class="setup-meta">Reel library</span></a>
+    <a href="#rods-library"><span class="setup-icon">🎣</span><span class="setup-name">Rods</span><span class="setup-meta">Rod library</span></a>
+    <a href="#common-baits-library"><span class="setup-icon">🌽</span><span class="setup-name">Common Baits</span><span class="setup-meta">Bait library</span></a>
+  </div>
+</div>
+
+
+    
+  </div>
+</section>
+
+
 
 <section id="finder"><div class="wrap">
 <div style="background:linear-gradient(145deg,#12394b,#0a202d);border:1px solid #2a6277;border-radius:22px;padding:25px;box-shadow:0 16px 45px #0004">
@@ -788,6 +1208,613 @@ window.addEventListener('unhandledrejection', function (event) {
 </div>
 </div></section>
 
+<section id="tackle-modifiers" class="tm-section">
+<div class="wrap"><div class="tm-shell">
+<div class="tm-head"><div><div class="tm-kicker">Fishing Planet Mechanics</div>
+<h2>Tackle Modifiers</h2>
+<p>A detailed guide to tackle-related factors that can change XP, Club Points, casting behavior, fish-fighting load, and setup performance.</p></div>
+<div class="tm-label">🎣 Setup Balance &amp; XP</div></div>
+
+<div class="tm-grid">
+<article class="tm-card"><div class="tm-icon">⭐</div><h3>XP Modifier — Tackle Strength</h3><p>Fishing Planet factors the tackle used into fish XP. The game's leveling notes explain that heavier fish caught with lighter tackle can produce more XP, while excessively strong tackle reduces the benefit.</p><ul><li>Fish size matters.</li><li>Tackle strength matters.</li><li>Location and species history also affect XP.</li><li>The complete current XP formula is not publicly documented in the sources used here.</li></ul></article>
+<article class="tm-card"><div class="tm-icon">🏆</div><h3>Club Points Penalty</h3><p>Strong tackle can reduce Club Point efficiency when targeting smaller fish. The game added a penalty based on the difference between maximum tackle load and fish weight.</p><ul><li>Oversized tackle is not always optimal.</li><li>The penalty affects Club Point calculations.</li><li>Match tackle strength to the target whenever practical.</li></ul></article>
+<article class="tm-card"><div class="tm-icon">🚤</div><h3>Trolling XP Multiplier</h3><p>The game has a Trolling XP Multiplier in its XP Modifiers window. A 2024 update fixed a bug where it could appear when a fish was caught without trolling.</p><ul><li>Use it only in the trolling context.</li><li>Do not apply it automatically to non-trolling catches.</li><li>The exact current multiplier value is not published in the source used here.</li></ul></article>
+<article class="tm-card"><div class="tm-icon">⚖️</div><h3>Rod / Reel / Line Balance</h3><p>A balanced setup prevents weak links and reduces the chance of equipment damage.</p><ul><li>Reel maximum drag should be above the line's sustainable load.</li><li>Line test should stay below the rod's maximum line rating.</li><li>The line is normally intended to be the weakest link.</li><li>Avoid continuously running a reel at maximum drag.</li></ul></article>
+<article class="tm-card"><div class="tm-icon">🎯</div><h3>Casting &amp; Lure Modifiers</h3><p>The game includes rod casting test, lure weight and lure windage, plus a minimum lure weight for cast reels.</p><ul><li>Too-heavy lures can overload a light rod.</li><li>Lure weight affects casting suitability.</li><li>Lure windage affects casting behavior.</li><li>Match lure weight to the rod's rated range.</li></ul></article>
+<article class="tm-card"><div class="tm-icon">🧵</div><h3>Line Visibility &amp; Type</h3><p>Line parameters are not only about strength. Line thickness is a visibility factor for fish AI, and the game distinguishes braid from mono/fluoro.</p><ul><li>Thickness can affect visibility.</li><li>Line type changes setup characteristics.</li><li>Choose the weakest suitable line rather than simply the strongest.</li></ul></article>
+<article class="tm-card"><div class="tm-icon">🟠</div><h3>Bobber Modifiers</h3><p>Bobbers have sensitivity and lifting-capacity parameters. A float is more than a visual bite indicator.</p><ul><li>Maximum floating weight matters.</li><li>Too-heavy bait can make a bobber sink.</li><li>Float shape affects casting distance and buoyancy.</li><li>Check capacity before using large live bait.</li></ul></article>
+<article class="tm-card"><div class="tm-icon">🔥</div><h3>Fight Load &amp; Overload</h3><p>The load indicator shows when tackle is overloaded, with secondary indicators for rod and reel overload.</p><ul><li>Reduce drag if overloaded.</li><li>Changing rod/line angle can reduce load.</li><li>Critical overload can break equipment.</li><li>Making the line the weakest component helps protect the rod and reel.</li></ul></article>
+<article class="tm-card"><div class="tm-icon">🌊</div><h3>Leader, Hook &amp; Bait Fit</h3><p>Terminal tackle should match feeding depth, bait size, hook size and target fish.</p><ul><li>Leader length determines bait depth on float setups.</li><li>Hook and bait size should be proportionate.</li><li>Adjust depth when fish stop responding.</li><li>Current and bottom conditions can change the ideal setup.</li></ul></article>
+</div>
+
+<div class="tm-table-wrap"><table class="tm-table"><thead><tr><th>Modifier / Parameter</th><th>What it changes</th><th>Practical database rule</th></tr></thead><tbody>
+<tr><td>Fish size vs. tackle strength</td><td>XP calculation</td><td>Use appropriately light tackle when safe to improve XP efficiency.</td></tr>
+<tr><td>Maximum tackle load vs. fish weight</td><td>Club Point efficiency</td><td>Avoid unnecessarily heavy tackle for small targets.</td></tr>
+<tr><td>Trolling XP Multiplier</td><td>XP in trolling context</td><td>Treat it as a trolling modifier only.</td></tr>
+<tr><td>Rod casting test</td><td>Suitable lure casting range</td><td>Keep lure weight inside the rod's rated range.</td></tr>
+<tr><td>Lure weight / windage</td><td>Cast behavior and suitability</td><td>Match lure and rod instead of forcing oversized lures.</td></tr>
+<tr><td>Line thickness</td><td>Fish-AI visibility factor</td><td>Use thinner line when conditions and target strength allow.</td></tr>
+<tr><td>Reel type / line type</td><td>Setup behavior and compatibility</td><td>Build the reel and line as a matched system.</td></tr>
+<tr><td>Bobber max floating weight</td><td>Float stability / bait capacity</td><td>Make sure the float can support the selected bait.</td></tr>
+<tr><td>Drag + tackle load</td><td>Fish-fight stress and durability</td><td>Back off drag when the load indicator approaches overload.</td></tr>
+<tr><td>Leader length</td><td>Bait depth</td><td>Change depth to find where the target is feeding.</td></tr>
+</tbody></table></div>
+
+<div class="xp-opt" id="tackle-xp-optimizer">
+  <h3>⚡ How to Get Better XP with the Tackle Modifier</h3>
+  <p>
+    The goal is not simply to make your tackle as weak as possible. Build the
+    lightest setup that can reliably land your target fish, then watch the
+    catch-screen modifier to see whether the setup is helping or hurting your
+    XP.
+  </p>
+
+  <div class="xp-steps">
+    <article class="xp-step">
+      <span class="xp-num">1</span>
+      <h4>Start with the lightest safe setup</h4>
+      <p>Downsize the rod, reel and line until the setup is appropriate for the fish you are targeting. Fishing Planet's XP system explicitly considers tackle, and the documented rule is that lighter tackle on heavier fish can produce more XP while overly heavy tackle reduces the benefit.</p>
+    </article>
+
+    <article class="xp-step">
+      <span class="xp-num">2</span>
+      <h4>Watch the catch-screen arrows</h4>
+      <p>Use the XP modifier shown after each catch as your feedback loop. Green/no penalty is the direction you want; red arrows indicate the setup is too heavy for the fish you caught. Adjust one component at a time so you know what improved the result.</p>
+    </article>
+
+    <article class="xp-step">
+      <span class="xp-num">3</span>
+      <h4>Match the setup to the fish you actually catch</h4>
+      <p>A setup that is perfect for a large specimen can be too strong when smaller fish are biting. If your target range includes several sizes, judge the modifier from the fish sizes you are actually landing rather than from the maximum possible fish alone.</p>
+    </article>
+
+    <article class="xp-step">
+      <span class="xp-num">4</span>
+      <h4>Use barbless tackle when it fits the target</h4>
+      <p>Community testing consistently reports an XP benefit for barbless hooks/lures. Use the correct barbless size for the fish rather than choosing barbless equipment that is too large or too heavy for the target.</p>
+    </article>
+
+    <article class="xp-step">
+      <span class="xp-num">5</span>
+      <h4>Don't confuse XP per fish with XP per hour</h4>
+      <p>The lightest possible setup can make each fish worth more XP but can also create longer fights. A slightly stronger setup may land substantially more fish per hour. For leveling, compare total XP over the same amount of fishing time.</p>
+    </article>
+
+    <article class="xp-step">
+      <span class="xp-num">6</span>
+      <h4>Use lure-specific opportunities</h4>
+      <p>Some species/location combinations reward lure fishing with additional XP or cash according to community-maintained databases. When your Fish Database identifies a lure opportunity, test it with a properly matched light setup instead of automatically using bait.</p>
+    </article>
+
+    <article class="xp-step">
+      <span class="xp-num">7</span>
+      <h4>Protect the setup while going lighter</h4>
+      <p>Do not sacrifice reliable landings just to chase a modifier. If the fish is repeatedly breaking line or overloading the tackle, step up the weak component until the fight is controllable. The best farming setup is the lightest one that consistently lands fish.</p>
+    </article>
+
+    <article class="xp-step">
+      <span class="xp-num">8</span>
+      <h4>Re-check the modifier after changing gear</h4>
+      <p>The modifier is tied to the complete setup, not just one piece of equipment. When you change the rod, reel or line, catch several representative fish and check the result again.</p>
+    </article>
+  </div>
+
+  
+
+
+<div class="all-rods" id="all-rod-best-setups">
+  <section class="ps-section" id="low-budget-setups">
+
+<section class="mp-section ps-section" id="match-pole-setups">
+
+<section class="sp-section ps-section" id="spinning-pole-setups">
+
+<section class="cp-section ps-section" id="casting-pole-setups">
+
+
+<nav class="ps-index" aria-label="Setup libraries">
+<div class="setup-library-unclickable" data-section="feeder-pole-setups">🪱 Feeder</a>
+<div class="setup-library-unclickable" data-section="casting-pole-setups">🎯 Casting</a>
+<div class="setup-library-unclickable" data-section="spinning-pole-setups">🎣 Spinning</a>
+<div class="setup-library-unclickable" data-section="match-pole-setups">🏆 Match</a>
+<div class="setup-library-unclickable" data-section="low-budget-setups">💰 Low-Budget</a>
+<div class="setup-library-unclickable" data-section="best-setups">⭐ Best Setups</a>
+<div class="setup-library-unclickable" data-section="fully-tuned-setups">⚙️ Fully Tuned</a>
+</nav>
+
+<section class="ps-section" id="best-setups">
+<div class="ps-head"><div><div class="ps-kicker">Curated Collection • Performance</div><h3>⭐ Best Rod + Reel + Bait Setup Library</h3><p>High-confidence starting points built around documented Fishing Planet combinations and sensible tackle balance.</p></div><span class="ps-badge">BEST PICKS</span></div>
+<div class="ps-grid">
+<article class="ps-card"><div class="ps-type">Starter Spinning</div><h4>🎣 ValueSpin + MiniSpin</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>ValueSpin 6'3" (190)</span></div><div class="ps-row"><b>Reel</b><span>MiniSpin 1200</span></div><div class="ps-row"><b>Line</b><span>Mono .007" (0.18 mm)</span></div><div class="ps-row"><b>Lure</b><span>Casting Spoon 1/6 oz (5 g), #2</span></div></div><span class="ps-tag">OFFICIAL TUTORIAL</span><p>One of the clearest documented early-game spinning combinations.</p></article>
+<article class="ps-card"><div class="ps-type">Starter Match</div><h4>🏆 OmniFloat + Minnows</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>OmniFloat 11'5" (350)</span></div><div class="ps-row"><b>Reel</b><span>Spin reel, ≥2 kg max drag</span></div><div class="ps-row"><b>Line</b><span>Braid .005" (0.12 mm)</span></div><div class="ps-row"><b>Bait</b><span>Small Minnows or Shiners</span></div></div><span class="ps-tag">OFFICIAL TUTORIAL</span><p>Built for long-cast float fishing and the Rocky Lake Trout tutorial.</p></article>
+<article class="ps-card"><div class="ps-type">Starter Feeder</div><h4>🪱 CreekPro + Pearl Barley</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>CreekPro 7'10" (240)</span></div><div class="ps-row"><b>Reel</b><span>MiniSpin 1200</span></div><div class="ps-row"><b>Line</b><span>Mono .007" + .004" leader</span></div><div class="ps-row"><b>Bait</b><span>Pearl Barley</span></div></div><span class="ps-tag">OFFICIAL TUTORIAL</span><p>A clean bottom-fishing entry setup with a 1/2 oz sinker and #6 hook.</p></article>
+<article class="ps-card"><div class="ps-type">Heavy Casting</div><h4>💪 GalaxyCast + Cyclone</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>GalaxyCast 260</span></div><div class="ps-row"><b>Reel</b><span>Cyclone 4500</span></div><div class="ps-row"><b>Line</b><span>Fluoro 0.45 mm / 11.3 kg</span></div><div class="ps-row"><b>Lure</b><span>Heavy lure inside rod range</span></div></div><span class="ps-tag">BALANCED EXAMPLE</span><p>A documented heavy casting balance example for stronger fish.</p></article>
+<article class="ps-card"><div class="ps-type">Heavy Feeder</div><h4>🔥 BigAlli Heavy Feed</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>BigAlli 12'10"–14'10"</span></div><div class="ps-row"><b>Reel</b><span>High-drag spinning reel</span></div><div class="ps-row"><b>Feeder</b><span>70–170 g, model dependent</span></div><div class="ps-row"><b>Bait</b><span>Boilies, pellets, corn or dough</span></div></div><span class="ps-tag">HEAVY FEEDER</span><p>Designed around the BigAlli family's heavy and extra-heavy feeder range.</p></article>
+<article class="ps-card"><div class="ps-type">Sport Match</div><h4>🏆 Nero Sport Float</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>Nero 12'10" (390) Sport</span></div><div class="ps-row"><b>Reel</b><span>Callisto MG 3000 Sport</span></div><div class="ps-row"><b>Line</b><span>Mono .010" / 0.25 mm</span></div><div class="ps-row"><b>Bait</b><span>Minnows, eggs, cutbait, crawlers or crickets</span></div></div><span class="ps-tag">SPORT PACK</span><p>A sport-oriented match setup with a broad bait selection.</p></article>
+</div>
+<div class="ps-footer"><b>Selection rule:</b> “Best” here means a strong, documented or logically balanced starting setup—not a universal best for every species, lake or player level.</div>
+</section>
+
+<section class="ps-section" id="fully-tuned-setups">
+<div class="ps-head"><div><div class="ps-kicker">Premium Collection • Precision</div><h3>⚙️ Fully Tuned Rod + Reel + Bait Setups</h3><p>Use these as final-check templates: rod range first, reel drag second, line third, then terminal tackle and bait/lure.</p></div><span class="ps-badge">FULLY TUNED</span></div>
+<div class="ps-grid">
+<article class="ps-card"><div class="ps-type">Tuned Spinning</div><h4>⚙️ Light Predator Tune</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>Light spinning rod matched to lure</span></div><div class="ps-row"><b>Reel</b><span>Smallest reel with adequate drag</span></div><div class="ps-row"><b>Line</b><span>Below rod maximum, strong enough for fish</span></div><div class="ps-row"><b>Lure</b><span>Small spoon, jig or shad</span></div></div><span class="ps-tag">XP / CONTROL</span><p>Ideal when you want a light balanced setup without pushing any component past its rating.</p></article>
+<article class="ps-card"><div class="ps-type">Tuned Casting</div><h4>🎯 Heavy Predator Tune</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>Heavy casting rod</span></div><div class="ps-row"><b>Reel</b><span>Max drag above line test</span></div><div class="ps-row"><b>Line</b><span>Below rod maximum</span></div><div class="ps-row"><b>Lure</b><span>Near the rod's effective lure range</span></div></div><span class="ps-tag">POWER / DISTANCE</span><p>Keep the lure inside the stated range for consistent casting performance.</p></article>
+<article class="ps-card"><div class="ps-type">Tuned Match</div><h4>🏆 Long-Cast Float Tune</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>OmniFloat / equivalent match rod</span></div><div class="ps-row"><b>Reel</b><span>Drag above line test</span></div><div class="ps-row"><b>Line</b><span>Light line within rod range</span></div><div class="ps-row"><b>Bait</b><span>Minnows, shiners or species bait</span></div></div><span class="ps-tag">FLOAT CONTROL</span><p>Prioritizes long casts, precise float placement and a balanced terminal setup.</p></article>
+<article class="ps-card"><div class="ps-type">Tuned Feeder</div><h4>🪱 Bottom-Fishing Tune</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>Feeder sized for target feeder weight</span></div><div class="ps-row"><b>Reel</b><span>Drag above line test</span></div><div class="ps-row"><b>Feeder</b><span>Inside rod casting range</span></div><div class="ps-row"><b>Bait</b><span>Groundbait + species bait</span></div></div><span class="ps-tag">BOTTOM CONTROL</span><p>Especially useful when fishing a fixed spot with a rod stand.</p></article>
+<article class="ps-card"><div class="ps-type">Tuned Budget</div><h4>💰 Maximum Value Tune</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>Lowest-cost rod that fits target</span></div><div class="ps-row"><b>Reel</b><span>Cheapest compatible reel</span></div><div class="ps-row"><b>Line</b><span>Reliable, not unnecessarily heavy</span></div><div class="ps-row"><b>Bait</b><span>Affordable species-specific bait</span></div></div><span class="ps-tag">CREDIT EFFICIENT</span><p>Upgrade only the component that is limiting the setup instead of replacing everything.</p></article>
+<article class="ps-card"><div class="ps-type">Tuned Saltwater</div><h4>🌊 Saltwater Control Tune</h4><div class="ps-specs"><div class="ps-row"><b>Rod</b><span>Saltwater rod matched to target</span></div><div class="ps-row"><b>Reel</b><span>Saltwater reel with suitable drag</span></div><div class="ps-row"><b>Line</b><span>Below rod maximum</span></div><div class="ps-row"><b>Lure/Bait</b><span>Target-specific saltwater terminal tackle</span></div></div><span class="ps-tag">SALTWATER</span><p>Build around the target species and saltwater tackle requirements rather than copying freshwater values.</p></article>
+</div>
+<div class="ps-footer"><b>Final tuning checklist:</b> rod casting/lure range → rod line range → reel type → reel max drag → line test → leader → hook/lure/feeder → bait. Fishing Planet's documentation emphasizes that casting weight and line weight directly affect performance and safe use. citeturn0search5</div>
+</section>
+
+
+<section class="fp-section ps-section" id="feeder-pole-setups">
+<div class="ps-head"><div><div class="ps-kicker">Setup Collection • Bottom Fishing</div><h3>🪱 Feeder Pole Setup Library</h3><p>Professional feeder loadouts with rod, reel, line, feeder/sinker and bait guidance.</p></div><span class="ps-badge">FEEDER</span></div>
+<p class="fp-lead">
+  A complete-looking feeder/bottom-fishing library covering picker, AllRound,
+  Laker Pro, BigAlli, and specialty feeder rods. Feeder rods use quiver tips
+  and are designed for bait fishing on the bottom. Exact combinations are
+  used where the Fishing Planet Wiki documents them; the remaining cards are
+  practical templates based on each rod family's published casting and line
+  ranges, so no unsupported “perfect” combination is presented as fact.
+</p>
+
+<div class="fp-grid ps-grid">
+<article class="fp-card ps-card"><div class="fp-type">Level 3 • Picker</div><h4>🪱 CreekPro 7'10" — Starter Bottom</h4><ul><li><b>Rod:</b> Flaggmann CreekPro 7'10" (240)</li><li><b>Reel:</b> MiniSpin 1200</li><li><b>Line:</b> Mono .007" (0.18 mm)</li><li><b>Leader:</b> .004" (0.1 mm)</li><li><b>Sinker:</b> 1/2 oz (15 g)</li><li><b>Hook:</b> #6</li><li><b>Bait:</b> Pearl Barley</li></ul><span class="fp-tag">⭐ Official tutorial setup</span><p>The official tutorial's Level 3 bottom-fishing setup for beginners.</p></article>
+
+<article class="fp-card ps-card"><div class="fp-type">Level 3 • Feeder</div><h4>🌾 CreekPro — Open Feeder</h4><ul><li><b>Rod:</b> CreekPro 7'10" (240)</li><li><b>Reel:</b> MiniSpin 1200</li><li><b>Line:</b> Mono .007" (0.18 mm)</li><li><b>Leader:</b> .004" (0.1 mm)</li><li><b>Feeder:</b> Open Feeder 1/2 oz (15 g)</li><li><b>Hook/Bait:</b> #6 + Pearl Barley</li></ul><span class="fp-tag">🎯 Short-range feeder</span><p>CreekPro is a light picker designed for small feeders and short-range fishing in still water or slow current.</p></article>
+
+<article class="fp-card ps-card"><div class="fp-type">Level 12–16 • AllRound</div><h4>🎯 AllRound 330–390</h4><ul><li><b>Rod:</b> Flaggmann AllRound 10'10"–12'10"</li><li><b>Reel:</b> Medium spinning reel matched to line test</li><li><b>Line:</b> 1.5–5.0 kg depending on model</li><li><b>Feeder:</b> Medium/heavy feeder inside casting range</li><li><b>Bait:</b> Worms, Maggots, Corn, Dough or Groundbait</li></ul><span class="fp-tag">💰 Best-value family</span><p>The official rod guide describes AllRound as versatile for average/heavy feeders, still water and slow/medium current.</p></article>
+
+<article class="fp-card ps-card"><div class="fp-type">Level 16 • Feeder</div><h4>🏆 AllRound 12'10" — Rod Holder</h4><ul><li><b>Rod:</b> AllRound 390 (12'10")</li><li><b>Reel:</b> Prima 3000</li><li><b>Line:</b> Mono 0.25 mm / 3.6 kg</li><li><b>Leader:</b> Mono 0.18 mm / 3.8 kg</li><li><b>Hook:</b> #1</li><li><b>Bait:</b> Small Minnows</li></ul><span class="fp-tag">🐟 Walleye-style setup</span><p>A community-reported rod-holder setup; use it as a practical reference rather than an official fixed recipe.</p></article>
+
+<article class="fp-card ps-card"><div class="fp-type">Level 19–21 • Medium</div><h4>🏔️ Laker Pro 11'2"–13'2"</h4><ul><li><b>Rod:</b> UL-CHUBER Laker Pro</li><li><b>Reel:</b> Medium spinning reel with adequate drag</li><li><b>Line:</b> 2.0–6.5 kg depending on model</li><li><b>Feeder:</b> Medium feeder within 15–85 g rod range</li><li><b>Bait:</b> Worms, Maggots, Corn, Dough, Small Minnows</li></ul><span class="fp-tag">🌊 Moderate current</span><p>Laker Pro is designed for versatile medium-feeder fishing in lakes and rivers with moderate current.</p></article>
+
+<article class="fp-card ps-card"><div class="fp-type">Level 19+ • Light Picker</div><h4>🎯 CreekPro 9'10" — Light Live Bait</h4><ul><li><b>Rod:</b> CreekPro 9'10" (300)</li><li><b>Reel:</b> CrucianHunter 3000</li><li><b>Line:</b> Mono .009" / 0.23 mm, about 6 lb</li><li><b>Leader:</b> Titanium .004"</li><li><b>Hook:</b> #1/0</li><li><b>Bait:</b> Small Minnows</li><li><b>Sinker:</b> About 7/8 oz</li></ul><span class="fp-tag">🐟 Early predator feeder</span><p>A practical early-game setup reported for Emerald Lake-style small live-bait feeder fishing.</p></article>
+
+<article class="fp-card ps-card"><div class="fp-type">Level 23–27 • Heavy</div><h4>💪 BigAlli 12'10"–14'10"</h4><ul><li><b>Rod:</b> UL-CHUBER BigAlli</li><li><b>Reel:</b> Heavy spinning reel with suitable drag</li><li><b>Line:</b> 3.0–9.0 kg depending on model</li><li><b>Feeder:</b> Heavy/extra-heavy feeder, 70–170 g range</li><li><b>Bait:</b> Corn, Boilies, Dough, Pellets, Cutbait</li></ul><span class="fp-tag">🔥 Heavy feeder</span><p>BigAlli is explicitly designed for heavy and extra-heavy feeders and has very high casting potential.</p></article>
+
+<article class="fp-card ps-card"><div class="fp-type">Advanced • Big Fish</div><h4>🐟 BigAlli + Heavy Carp Feed</h4><ul><li><b>Rod:</b> BigAlli 13'10" / 14'10"</li><li><b>Reel:</b> High-drag spinning reel</li><li><b>Line:</b> 6–9 kg class within rod rating</li><li><b>Feeder:</b> 90–170 g class as appropriate</li><li><b>Bait:</b> Boilies, Pellets, Corn, Dough</li></ul><span class="fp-tag">🏆 Carp / heavy bottom</span><p>Use this for larger bottom fish where a light picker would be underpowered.</p></article>
+
+<article class="fp-card ps-card"><div class="fp-type">Specialty • Feed</div><h4>🌾 Groundbait Feeder</h4><ul><li><b>Rod:</b> AllRound or Laker Pro</li><li><b>Reel:</b> Compatible spinning reel</li><li><b>Line:</b> Within rod rating</li><li><b>Feeder:</b> Open feeder sized to rod</li><li><b>Groundbait:</b> Crimson Cold Water or location-specific mix</li><li><b>Hook/Bait:</b> Match the target species</li></ul><span class="fp-tag">🧺 Groundbait</span><p>The official tutorial uses an Open Feeder 1/2 oz and Crimson Cold Water Groundbait to feed a spot.</p></article>
+
+<article class="fp-card ps-card"><div class="fp-type">Budget • Feeder</div><h4>💰 Low-Cost AllRound</h4><ul><li><b>Rod:</b> Flaggmann AllRound</li><li><b>Reel:</b> Affordable compatible spinning reel</li><li><b>Line:</b> 1.5–4.5 kg depending on model</li><li><b>Feeder:</b> 20–70 g or 30–90 g class</li><li><b>Bait:</b> Worms, Dough, Corn or Pearl Barley</li></ul><span class="fp-tag">🪙 Value feeder</span><p>AllRound is specifically described by the official catalog as an affordable, versatile feeder family.</p></article>
+
+<article class="fp-card ps-card"><div class="fp-type">XP • Tackle Modifier</div><h4>⭐ Feeder XP Tuning</h4><ul><li><b>Rod:</b> Lightest safe feeder for target</li><li><b>Reel:</b> Smallest reel with adequate drag</li><li><b>Line:</b> Strong enough to land fish, below rod limit</li><li><b>Feeder/Sinker:</b> Stay inside casting range</li><li><b>Bait:</b> Species-specific bait with good bite rate</li></ul><span class="fp-tag">📈 XP focused</span><p>Use your Tackle Modifier information after testing the setup. Downsize only when fish can still be landed reliably.</p></article>
+
+<article class="fp-card ps-card"><div class="fp-type">Specialty • Feeder Dream</div><h4>🏆 Laker Pro 370 SE Combo</h4><ul><li><b>Rod:</b> Laker Pro 370 SE, 12'2"</li><li><b>Reel:</b> Medium feeder-compatible spinning reel</li><li><b>Line:</b> 2–6 kg class</li><li><b>Quiver:</b> 1–2 oz options</li><li><b>Feeder/Bait:</b> Medium feeder + groundbait, worms, corn or pellets</li></ul><span class="fp-tag">🎁 Feeder Dream family</span><p>The official Feeder Dream Pack lists Laker Pro 370 SE with a 20–70 g casting range and 2–6 kg line range.</p></article>
+</div>
+
+<div class="fp-info">
+<b>🪱 Feeder rule:</b> Feeder rods are also called quiver-tip rods. They are designed for bottom fishing without a float and are especially useful for carp and other bottom-feeding fish. citeturn0search2
+<br><br>
+<b>⚖️ Match the feeder to the rod:</b> Always keep the sinker/feeder weight inside the rod's casting-weight range. CreekPro models range from 5–35 g through 15–50 g, AllRound models from 20–70 g through 40–120 g, Laker Pro from 15–60 g through 25–85 g, and BigAlli from 70–140 g through 90–170 g. citeturn0search2
+<br><br>
+<b>🎯 Official beginner recipe:</b> The Fishing Planet tutorial specifically uses CreekPro 7'10", MiniSpin 1200, Mono .007" line and .004" leader, a 1/2 oz sinker, #6 hook and Pearl Barley. citeturn0search0
+</div>
+</section>
+
+<div class="ps-head"><div><div class="ps-kicker">Setup Collection • Casting</div><h3>🎯 Casting Pole Setup Library</h3><p>Clean, balanced casting loadouts organized around lure weight, line strength and reel drag.</p></div><span class="ps-badge">CASTING</span></div>
+<p class="cp-lead">
+  A dedicated casting-rod library covering light/medium, heavy, extra-heavy,
+  jigging, and sport casting. Casting rods require casting reels, and each
+  setup below keeps the lure weight, line strength and reel drag matched to
+  the rod. Exact combinations are used where the Fishing Planet Wiki documents
+  them; other cards are clearly labeled practical templates.
+</p>
+
+<div class="cp-grid ps-grid">
+<article class="cp-card ps-card"><div class="cp-type">Level 6–8 • Light/Medium</div><h4>🎣 ValueCast 6'6" — Starter Caster</h4><ul><li><b>Rod:</b> ValueCast 6'6" (200)</li><li><b>Reel:</b> Compatible low-cost casting reel</li><li><b>Line:</b> Mono/fluoro within the 1.8–4.0 kg rod range</li><li><b>Lure:</b> 7–25 g spoon, crankbait or jig</li><li><b>Target:</b> Bass and medium predators</li></ul><span class="cp-tag">💰 Value casting</span><p>ValueCast is designed for light and medium casting. Pick a casting reel whose max drag safely exceeds the chosen line test.</p></article>
+
+<article class="cp-card ps-card"><div class="cp-type">Level 10 • Bass</div><h4>🐟 ValueCast Bass Jig</h4><ul><li><b>Rod:</b> ValueCast 6'6" (200)</li><li><b>Reel:</b> Casting reel matched to rod</li><li><b>Line:</b> Braid/fluoro within rod range</li><li><b>Lure:</b> Bass Jig 1/4 oz (7 g), #1/0</li><li><b>Target:</b> Largemouth Bass / small predators</li></ul><span class="cp-tag">⭐ Early casting route</span><p>A practical early casting setup centered on the bass jig and the ValueCast family.</p></article>
+
+<article class="cp-card ps-card"><div class="cp-type">Medium • General</div><h4>🎯 Medium Casting All-Rounder</h4><ul><li><b>Rod:</b> ValueCast / medium casting rod</li><li><b>Reel:</b> Medium casting reel</li><li><b>Line:</b> Test below rod maximum and below reel max drag</li><li><b>Lure:</b> Spoon, crankbait, jig or shad within lure range</li><li><b>Target:</b> Bass, Walleye and medium predators</li></ul><span class="cp-tag">⚙️ Easy to tune</span><p>Use the current in-game rod stats to select the exact line and reel.</p></article>
+
+<article class="cp-card ps-card"><div class="cp-type">Level 18–19 • Heavy</div><h4>💪 Heavy Casting — GalaxyCast 260</h4><ul><li><b>Rod:</b> GalaxyCast 260</li><li><b>Reel:</b> Cyclone 4500</li><li><b>Line:</b> Fluoro 0.45 mm / 11.3 kg test</li><li><b>Lure:</b> Heavy spoon, jig, crankbait or shad</li><li><b>Target:</b> Heavy hard-fighting fish</li></ul><span class="cp-tag">⭐ Official balanced example</span><p>The official balanced-tackle guide documents this exact X Heavy casting combination.</p></article>
+
+<article class="cp-card ps-card"><div class="cp-type">Heavy • Long Cast</div><h4>🏹 Heavy Casting Distance</h4><ul><li><b>Rod:</b> Heavy casting rod with appropriate lure range</li><li><b>Reel:</b> High-drag casting reel</li><li><b>Line:</b> Fluoro or braid below rod maximum</li><li><b>Lure:</b> Heavy spoon or long-cast crankbait</li><li><b>Target:</b> Large freshwater predators</li></ul><span class="cp-tag">📏 Distance focused</span><p>Longer casting rods generally provide more casting distance, while lure weight and line thickness also affect casting.</p></article>
+
+<article class="cp-card ps-card"><div class="cp-type">X Heavy • Big Fish</div><h4>🐊 GalaxyCast + Strong Caster</h4><ul><li><b>Rod:</b> GalaxyCast in the correct 5–17 kg class</li><li><b>Reel:</b> Casting reel with max drag above line test</li><li><b>Line:</b> Strong fluoro/braid within rod range</li><li><b>Lure:</b> Heavy jig, spoon or crankbait</li><li><b>Target:</b> Very large predators</li></ul><span class="cp-tag">🔥 X Heavy</span><p>Increase line and reel strength only when the casting rod can safely handle it.</p></article>
+
+<article class="cp-card ps-card"><div class="cp-type">Advanced • FarCaster</div><h4>📡 MagFin FarCaster</h4><ul><li><b>Rod:</b> MagFin FarCaster 5'3" or 6'3"</li><li><b>Reel:</b> Compatible casting reel</li><li><b>Line:</b> Within the 2.5–6.0 kg rod range</li><li><b>Lure:</b> 10–28 g</li><li><b>Target:</b> Deep-water applications</li></ul><span class="cp-tag">🎯 Precision casting</span><p>The official rod catalog lists FarCaster as a high-performance casting rod for accurate casting and deep-water use.</p></article>
+
+<article class="cp-card ps-card"><div class="cp-type">Advanced • Jigging</div><h4>🪝 Casting Jig + Soft Shad</h4><ul><li><b>Rod:</b> Casting rod whose lure range covers the jig</li><li><b>Reel:</b> Casting reel with suitable drag</li><li><b>Line:</b> Braid or fluoro below rod maximum</li><li><b>Lure:</b> Jig head + Worm/Shad</li><li><b>Target:</b> Bass, Pike, Walleye and larger predators</li></ul><span class="cp-tag">🪝 Jig setup</span><p>Keep the combined jig-head and soft-bait weight inside the rod's displayed lure-weight range.</p></article>
+
+<article class="cp-card ps-card"><div class="cp-type">Sport • Heavy</div><h4>🏆 CosmoCast 6'3" Sport</h4><ul><li><b>Rod:</b> CosmoCast 6'3" (190) Sport</li><li><b>Reel:</b> Cyclone 6500 Sport</li><li><b>Line:</b> Mono .02" / 0.5 mm, 14.5 kg OR Fluoro .024" / 0.6 mm, 18.1 kg</li><li><b>Lure:</b> Medium Spoon 1½–2 oz, heavy crankbaits or large jig heads</li><li><b>Target:</b> Heavy sport fish</li></ul><span class="cp-tag">🏆 Official Sport Pack</span><p>The official Sport Heavy Casting Pack documents this rod, reel, lines and lure selection.</p></article>
+
+<article class="cp-card ps-card"><div class="cp-type">XP • Tackle Modifier</div><h4>⭐ Casting XP Tuning</h4><ul><li><b>Rod:</b> Lightest casting rod that safely covers the target lure</li><li><b>Reel:</b> Smallest suitable casting reel</li><li><b>Line:</b> Strong enough for the fish but below rod limit</li><li><b>Lure:</b> Match the fish and stay inside lure range</li></ul><span class="cp-tag">📈 XP focused</span><p>After several catches, use your Tackle Modifier information to decide whether a lighter balanced setup is worthwhile.</p></article>
+
+<article class="cp-card ps-card"><div class="cp-type">Budget • Casting</div><h4>💰 Low-Cost Caster</h4><ul><li><b>Rod:</b> ValueCast 5'3" or 6'6"</li><li><b>Reel:</b> Lowest-cost compatible casting reel</li><li><b>Line:</b> Mono/fluoro within the rod's 1.8–4.0 kg range</li><li><b>Lure:</b> 7–25 g spoon/jig/crankbait</li></ul><span class="cp-tag">🪙 Save credits</span><p>ValueCast is specifically described by the official catalog as a great-value light and medium casting rod.</p></article>
+
+<article class="cp-card ps-card"><div class="cp-type">Saltwater • Casting</div><h4>🌴 Saltwater Casting Template</h4><ul><li><b>Rod:</b> Saltwater casting rod matched to target</li><li><b>Reel:</b> Saltwater casting reel with adequate max drag</li><li><b>Line:</b> Saltwater-rated braid/mono/fluoro below rod maximum</li><li><b>Lure:</b> Metal spoon, heavy jig, crankbait or soft shad</li><li><b>Target:</b> Saltwater predators</li></ul><span class="cp-tag">🌊 Saltwater</span><p>Use the target fish's lure weight and current in-game line requirements when selecting the exact components.</p></article>
+</div>
+
+<div class="cp-info">
+<b>⚖️ Casting setup rule:</b> Casting rods can only use casting reels. The line test should stay below the rod's maximum line weight, and the reel's maximum drag should be higher than the line test. The official guide also recommends choosing a reel/drag setting that uses most of the line's strength without exceeding the rod or reel limits. citeturn0search0turn0search2
+<br><br>
+<b>🎯 Lure rule:</b> Always keep the lure inside the casting rod's displayed lure-weight range. The Casting Rod catalog lists each model's lure and line ranges; for example, ValueCast is 7–25 g with a 1.8–4.0 kg line range, while GalaxyCast heavy models cover substantially heavier tackle. citeturn0search5
+<br><br>
+<b>📌 Important:</b> This section covers the major casting-rod families and documented setups available from the sources. For models without a documented fixed reel/bait combination, the site intentionally labels the card as a template instead of inventing exact specifications.
+</div>
+</section>
+
+<div class="ps-head"><div><div class="ps-kicker">Setup Collection • Spinning</div><h3>🎣 Spinning Pole Setup Library</h3><p>Streamlined spinning combinations for light, medium, heavy and specialty fishing.</p></div><span class="ps-badge">SPINNING</span></div>
+<p class="sp-lead">
+  A dedicated spinning-rod setup section with easy-to-copy combinations for
+  light, medium, heavy, jigging, and specialty spinning rods. The official
+  Fishing Planet tutorial provides exact early-game ValueSpin and Elemental
+  combinations, while the official balanced-tackle guide provides the
+  JigWinner and Thora examples. Other cards are practical tuning templates
+  based on each rod's intended range rather than claims of one universal best
+  setup.
+</p>
+
+<div class="sp-grid ps-grid">
+<article class="sp-card ps-card"><div class="sp-type">Level 3 • Ultra Light</div><h4>🟢 ValueSpin 6'3" (190)</h4><ul><li><b>Reel:</b> MiniSpin 1200</li><li><b>Line:</b> Mono .007" / 0.18 mm</li><li><b>Lure:</b> Casting Spoon 1/6 oz (5 g), #2</li><li><b>Target:</b> Early predators</li></ul><span class="sp-tag">⭐ Official tutorial setup</span><p>The game's exact Level 3 spinning setup. Great first lure rig.</p></article>
+
+<article class="sp-card ps-card"><div class="sp-type">Level 4 • Light</div><h4>🎯 Elemental 6'7" (200)</h4><ul><li><b>Reel:</b> InspireCast 2000</li><li><b>Line:</b> Mono .007" / 0.18 mm</li><li><b>Lure:</b> Casting Spoon 1/6 oz (5 g), #2</li><li><b>Target:</b> Trout / small predators</li></ul><span class="sp-tag">⭐ Official tutorial setup</span><p>Exact Level 4 progression after unlocking the rod slot.</p></article>
+
+<article class="sp-card ps-card"><div class="sp-type">Level 8+ • Light</div><h4>⚡ Elemental 260</h4><ul><li><b>Reel:</b> CrucianHunter 4000</li><li><b>Line:</b> Fluoro around 0.23 mm / 3.6 kg class</li><li><b>Lure:</b> Narrow Spoon, small jig or shad within rod range</li><li><b>Target:</b> Trout / Walleye / Bass</li></ul><span class="sp-tag">💰 Value upgrade</span><p>A community-used light setup template; verify current in-game stats before purchase.</p></article>
+
+<article class="sp-card ps-card"><div class="sp-type">Light • All-Around</div><h4>🏆 JigWinner 270</h4><ul><li><b>Reel:</b> Prima 3500</li><li><b>Line:</b> Fluoro 0.28 mm / 4.5 kg</li><li><b>Lure:</b> Jig, narrow spoon or shad in range</li><li><b>Target:</b> Trout, Walleye, Bass</li><li><b>Drag:</b> Setting 6 on the documented Prima 3500 example</li></ul><span class="sp-tag">⭐ Official balanced example</span><p>The official balanced-tackle guide specifically recommends this combination.</p></article>
+
+<article class="sp-card ps-card"><div class="sp-type">Medium • General</div><h4>🎣 JigWinner 300 / 330 Class</h4><ul><li><b>Reel:</b> Medium spinning reel matched to rod line range</li><li><b>Line:</b> Fluoro or braid within rod rating</li><li><b>Lure:</b> Medium spoon, jig or soft shad</li><li><b>Target:</b> Larger bass / pike-class predators</li></ul><span class="sp-tag">⚙️ Tune to rod stats</span><p>Use the exact rod's displayed line and lure ranges when selecting the final reel and lure.</p></article>
+
+<article class="sp-card ps-card"><div class="sp-type">Medium • Long Cast</div><h4>🌊 Thora Light/Medium</h4><ul><li><b>Reel:</b> Medium-high drag spinning reel</li><li><b>Line:</b> Fluoro/braid below rod maximum</li><li><b>Lure:</b> Medium spoons, crankbaits or jig heads</li><li><b>Target:</b> Strong freshwater predators</li></ul><span class="sp-tag">📏 Long-cast focus</span><p>Longer spinning rods generally offer more casting distance and broader lure/line ranges.</p></article>
+
+<article class="sp-card ps-card"><div class="sp-type">Level 18–19 • Heavy</div><h4>💪 Thora 290</h4><ul><li><b>Reel:</b> Exterminator 5500</li><li><b>Line:</b> Fluoro 0.35 mm / 6.8 kg</li><li><b>Lure:</b> Heavy spoon, jig or crankbait within rod range</li><li><b>Target:</b> Large fish at California</li><li><b>Drag:</b> Setting 6 on the documented reel example</li></ul><span class="sp-tag">⭐ Official heavy setup</span><p>The official balanced-tackle guide gives this exact rod, reel and line combination.</p></article>
+
+<article class="sp-card ps-card"><div class="sp-type">Heavy • Predator</div><h4>🐊 Heavy Spinning Template</h4><ul><li><b>Rod:</b> Heavy spinning rod matched to lure weight</li><li><b>Reel:</b> High-drag spinning reel</li><li><b>Line:</b> Strong fluoro or braid below rod maximum</li><li><b>Lure:</b> Large spoon, crankbait, jig or soft shad</li><li><b>Target:</b> Pike, Muskie and other heavy predators</li></ul><span class="sp-tag">🔥 Big-fish setup</span><p>For large predators, choose the weakest safe component first and balance the rest around it.</p></article>
+
+<article class="sp-card ps-card"><div class="sp-type">Jigging • Specialized</div><h4>🪝 MagFin JigWinner</h4><ul><li><b>Rod:</b> MagFin JigWinner model matched to lure weight</li><li><b>Reel:</b> MagFin Prima-series spinning reel</li><li><b>Line:</b> Strong braid/fluoro within rod range</li><li><b>Lure:</b> Heavy jig heads + soft shads</li><li><b>Target:</b> Powerful predators</li></ul><span class="sp-tag">🎯 Jig-focused</span><p>The official rod catalog describes the JigWinner family as jig-focused and designed around MagFin Prima reels.</p></article>
+
+<article class="sp-card ps-card"><div class="sp-type">Light • XP</div><h4>⭐ Tackle Modifier XP Spin</h4><ul><li><b>Rod:</b> Light spinning rod appropriate for target</li><li><b>Reel:</b> Smallest safe reel with adequate drag</li><li><b>Line:</b> Strong enough to land fish, below rod maximum</li><li><b>Lure:</b> Small spoon, jig or shad matched to fish</li></ul><span class="sp-tag">📈 XP tuning</span><p>Check the modifier after several fish. Downsize only when landing remains reliable.</p></article>
+
+<article class="sp-card ps-card"><div class="sp-type">Saltwater • Spinning</div><h4>🌴 Saltwater Spinning Template</h4><ul><li><b>Rod:</b> Saltwater spinning rod matched to target</li><li><b>Reel:</b> Saltwater spinning reel with adequate drag</li><li><b>Line:</b> Saltwater-rated mono/braid below rod maximum</li><li><b>Lure:</b> Metal spoon, jig or saltwater soft plastic</li><li><b>Target:</b> Saltwater predators</li></ul><span class="sp-tag">🌊 Saltwater</span><p>Use the target species' lure weight and line requirement rather than carrying over a freshwater setup unchanged.</p></article>
+
+<article class="sp-card ps-card"><div class="sp-type">Budget • Spinning</div><h4>💰 Reuse Your Gear Setup</h4><ul><li><b>Rod:</b> Cheapest spinning rod that covers lure weight</li><li><b>Reel:</b> Smallest compatible spinning reel</li><li><b>Line:</b> Affordable mono/fluoro within rod rating</li><li><b>Lure:</b> Spoon or jig already in storage</li></ul><span class="sp-tag">🪙 Save credits</span><p>Don't replace the entire rig when one component can be upgraded to restore balance.</p></article>
+</div>
+
+<div class="sp-info">
+<b>⚙️ How to finish any spinning setup:</b> Pick the rod first, check its line-weight and lure-weight ranges, then choose a spinning reel with maximum drag above the line test. Keep the line test below the rod's maximum line weight and choose a lure that falls inside the rod's displayed lure-weight range. The official guide also notes that all non-casting rods use spinning reels, while casting rods require casting reels. citeturn0search0turn0search2
+<br><br>
+<b>📌 Important:</b> “Every Fishing Pole” is represented here by the major spinning-rod families and the documented specific spinning setups available from the current sources. For individual models not documented with a fixed reel/lure combination, the cards intentionally tell you to tune from the model's current in-game stats instead of inventing exact specifications.
+</div>
+</section>
+
+<div class="ps-head"><div><div class="ps-kicker">Setup Collection • Float Fishing</div><h3>🎯 Match Pole Setup Library</h3><p>Professional float setups with long-cast match rods, reels, lines, floats and bait.</p></div><span class="ps-badge">MATCH</span></div>
+<p class="mp-lead">
+  A dedicated Match Pole library for float fishing. These setups are organized
+  from beginner match rods through heavier match rods, with species-focused
+  bait choices. Where Fishing Planet's official sources give an exact combo,
+  that combo is used; where they don't, the card is clearly labeled as a
+  practical starting template rather than a guaranteed “best” setup.
+</p>
+
+<div class="mp-grid ps-grid">
+<article class="mp-card ps-card"><div class="mp-type">Beginner • Level 5</div><h4>🟢 OmniFloat 11'5" — Rocky Lake</h4><ul><li><b>Rod:</b> OmniFloat 11'5" (350)</li><li><b>Reel:</b> Spin reel with ≥2 kg max drag</li><li><b>Line:</b> Braid .005" (0.12 mm)</li><li><b>Hook:</b> Barbless #1/0</li><li><b>Float:</b> Chubby Bobber</li><li><b>Bait:</b> Small Minnows or Shiners</li></ul><span class="mp-bait">🐟 Best official beginner match setup</span><p>Fishing Planet's tutorial specifically gives this setup for Rocky Lake Trout and Trophy Trout.</p></article>
+
+<article class="mp-card ps-card"><div class="mp-type">Beginner • Trout</div><h4>🏔️ OmniFloat — Trout Variety</h4><ul><li><b>Rod:</b> OmniFloat 11'5" (350)</li><li><b>Reel:</b> 2–4 kg max-drag spinning reel</li><li><b>Line:</b> Light braid/mono inside the rod rating</li><li><b>Float:</b> Chubby or Pear-shaped bobber</li><li><b>Bait:</b> Small Minnows, Shiners, Natural Eggs, Worms</li></ul><span class="mp-bait">🐟 Rainbow • Cutthroat • Golden</span><p>Use the bait that matches the trout you are targeting and adjust leader length for trophy fishing.</p></article>
+
+<article class="mp-card ps-card"><div class="mp-type">Medium • Float</div><h4>🌊 Fenix 450 — General Purpose</h4><ul><li><b>Rod:</b> Fenix 450</li><li><b>Reel:</b> FatBoySpin 5000</li><li><b>Line:</b> Fluoro 0.3 mm / 5.5 kg</li><li><b>Float:</b> Match float sized to bait/load</li><li><b>Bait:</b> Worms, Dough, Corn or species-specific bait</li></ul><span class="mp-bait">🎯 Small–medium fish</span><p>This is the documented balanced Fenix 450 + FatBoySpin 5000 setup and is a strong general float template.</p></article>
+
+<article class="mp-card ps-card"><div class="mp-type">Medium • Match</div><h4>🎯 OmniFloat 14'10" — Long Cast</h4><ul><li><b>Rod:</b> OmniFloat 14'10" (450)</li><li><b>Reel:</b> Light/medium spinning reel matched to the line</li><li><b>Line:</b> Keep test within 1.5–3.5 kg rod range</li><li><b>Float:</b> Long-cast match float</li><li><b>Bait:</b> Worms, Maggots, Bread, Corn</li></ul><span class="mp-bait">📍 Long-distance float</span><p>The 14'10" OmniFloat is rated 1.5–3.5 kg and is designed for extended float control and casting.</p></article>
+
+<article class="mp-card ps-card"><div class="mp-type">Medium • Sport</div><h4>🏆 Nero 12'10" Sport</h4><ul><li><b>Rod:</b> Nero 12'10" (390) Sport</li><li><b>Reel:</b> Callisto MG 3000 Sport</li><li><b>Line:</b> Mono .010" / 0.25 mm, 3.6 kg test</li><li><b>Float:</b> Pear Shaped Bobber</li><li><b>Bait:</b> Small Minnows, Natural Eggs, Small Cutbait, Night Crawlers, Crickets</li></ul><span class="mp-bait">🏆 Sport Float Pack</span><p>This exact rod/reel pairing and bait selection are listed in Fishing Planet's Sport Float Pack.</p></article>
+
+<article class="mp-card ps-card"><div class="mp-type">Heavy • Match</div><h4>💪 Heavy Live-Bait Match</h4><ul><li><b>Rod:</b> A heavy match rod appropriate for the target</li><li><b>Reel:</b> High-drag spinning reel</li><li><b>Line:</b> Stay below rod maximum</li><li><b>Float:</b> Heavy pear-shaped float</li><li><b>Bait:</b> Large Minnows, Shiners, Cutbait</li></ul><span class="mp-bait">🐊 Pike • Catfish • Large predators</span><p>For large predators, use the heavier end of the match range and size the bait to the target rather than using the beginner Trout setup.</p></article>
+
+<article class="mp-card ps-card"><div class="mp-type">Saltwater • Match</div><h4>🌊 Majesty 11'5" SE</h4><ul><li><b>Rod:</b> Majesty 11'5" (350) SE</li><li><b>Reel:</b> Empress 7000 SE</li><li><b>Line:</b> Mono 0.026" / 0.65 mm, 23 kg test OR Fluoro 0.028" / 0.7 mm, 24 kg</li><li><b>Float:</b> Pear Shaped / Glowing Pear</li><li><b>Bait:</b> Sea Worms, Shiners, Shrimp, Large Minnows, Crab, Cutbait, Clam Meat, Sand Fleas, Finger Mullets</li></ul><span class="mp-bait">🌴 Saltwater Match</span><p>Exact rod, reel, line and bait options documented in the Saltwater Match Pack.</p></article>
+
+<article class="mp-card ps-card"><div class="mp-type">Advanced • Match</div><h4>🐟 Species-Matched Float</h4><ul><li><b>Rod:</b> Match rod whose line range fits the target</li><li><b>Reel:</b> Reel with max drag above line test</li><li><b>Line:</b> Weakest link in the setup</li><li><b>Float:</b> Match float sized to terminal load</li><li><b>Bait:</b> Minnow/Shiner for predators; worms, eggs, dough or corn for general species</li></ul><span class="mp-bait">⚙️ Fully tune it</span><p>Use this template when a specific rod is not documented with a fixed reel/bait pairing. Tune the line, float and bait to the actual fish.</p></article>
+</div>
+
+<div class="mp-info">
+<b>🎣 Match Pole rule:</b> Match rods are designed to make long casts with float tackle. Fishing Planet's official tutorial says the OmniFloat 11'5" has a 1.5–3.0 kg line range, and its Match Setup uses a reel with at least 2 kg max drag, Braid .005" (0.12 mm), a barbless #1/0 hook, Chubby Bobber, and Small Minnows or Shiners. citeturn0search0turn0search3
+<br><br>
+<b>⚖️ Balance:</b> Keep the reel's maximum drag above the line test and the line test below the rod's maximum line weight. That protects the rod/reel and makes the setup easier to tune. citeturn0search1
+</div>
+</section>
+
+<div class="ps-head"><div><div class="ps-kicker">Setup Collection • Value</div><h3>💰 Low-Budget Rod + Reel + Bait Setup</h3><p>Affordable, balanced combinations designed to minimize unnecessary gear upgrades.</p></div><span class="ps-badge">LOW BUDGET</span></div>
+<p class="lb-lead">Cheap, practical setups designed to get you fishing without buying the strongest gear. These use official Fishing Planet tutorial combinations where documented, plus clearly labeled value templates where the game does not publish a specific cheapest setup.</p>
+<div class="lb-grid">
+<article class="lb-card"><div class="lb-type">Level 1 • Telescopic</div><h4>🌱 Starter Bread Setup</h4><ul><li><b>Rod:</b> Basic Telescopic Rod</li><li><b>Reel:</b> Not required</li><li><b>Line:</b> Fluorocarbon .008" (0.2 mm)</li><li><b>Hook/Bait:</b> Small hook + Bread</li><li><b>Upgrade:</b> Red Worms</li></ul><span class="lb-price">🪙 Lowest-cost start</span><p>Best for learning the basics and catching small fish before buying specialized gear.</p></article>
+<article class="lb-card"><div class="lb-type">Level 3 • Spinning</div><h4>🎣 ValueSpin Budget Spinner</h4><ul><li><b>Rod:</b> ValueSpin 6'3" (190)</li><li><b>Reel:</b> MiniSpin 1200</li><li><b>Line:</b> Mono .007" (0.18 mm)</li><li><b>Lure:</b> Casting Spoon 1/6 oz (5 g), #2</li></ul><span class="lb-price">🪙 Official tutorial combo</span><p>The game's early spinning tutorial setup.</p></article>
+<article class="lb-card"><div class="lb-type">Level 4 • Spinning</div><h4>🎯 Elemental Budget Upgrade</h4><ul><li><b>Rod:</b> Elemental 6'7" (200)</li><li><b>Reel:</b> InspireCast 2000</li><li><b>Line:</b> Mono .007" (0.18 mm)</li><li><b>Lure:</b> Casting Spoon 1/6 oz (5 g), #2</li></ul><span class="lb-price">🪙 Early-game upgrade</span><p>A low-cost upgrade before specialized predator gear.</p></article>
+<article class="lb-card"><div class="lb-type">Level 5 • Trout</div><h4>🏔️ Rocky Lake Budget Trout</h4><ul><li><b>Rod:</b> Elemental 6'7" (200)</li><li><b>Reel:</b> Calisto XS 1400</li><li><b>Line:</b> Braid .005" (0.12 mm)</li><li><b>Lure:</b> Spinner / Barbless Narrow Spoon</li></ul><span class="lb-price">🪙 Official tutorial route</span><p>Low-cost progression for Rocky Lake trout.</p></article>
+<article class="lb-card"><div class="lb-type">Level 5 • Match</div><h4>🟠 Cheap Minnow Float</h4><ul><li><b>Rod:</b> OmniFloat 11'5" (350)</li><li><b>Reel:</b> Spin reel with 2 kg+ max drag</li><li><b>Line:</b> Braid .005" (0.12 mm)</li><li><b>Hook:</b> Barbless #1/0</li><li><b>Float:</b> Chubby Bobber</li><li><b>Bait:</b> Small Minnows or Shiners</li></ul><span class="lb-price">🪙 Official tutorial combo</span><p>Simple live-bait float setup using your expanded minnow database.</p></article>
+<article class="lb-card"><div class="lb-type">Level 3 • Feeder</div><h4>🪱 Cheapest Bottom Setup</h4><ul><li><b>Rod:</b> CreekPro 7'10" (240)</li><li><b>Reel:</b> MiniSpin 1200</li><li><b>Line:</b> Mono .007" (0.18 mm)</li><li><b>Leader:</b> .004" (0.1)</li><li><b>Sinker:</b> 1/2 oz (15 g)</li><li><b>Hook:</b> #6</li><li><b>Bait:</b> Pearl Barley</li></ul><span class="lb-price">🪙 Official tutorial combo</span><p>Very inexpensive entry into bottom fishing.</p></article>
+<article class="lb-card"><div class="lb-type">Level 6 • Feeder</div><h4>🌾 Cheap Dough Feeder</h4><ul><li><b>Rod:</b> Feeder Rod</li><li><b>Reel:</b> Affordable compatible spinning reel</li><li><b>Line:</b> Mono .008" (0.2 mm)</li><li><b>Leader:</b> .004" (0.1)</li><li><b>Feeder:</b> Open Feeder 1/2 oz (15 g)</li><li><b>Hook:</b> #4</li><li><b>Bait:</b> Dough Bait</li></ul><span class="lb-price">🪙 Low-cost feeder</span><p>Uses the game's documented feeder tutorial components.</p></article>
+<article class="lb-card"><div class="lb-type">Level 10 • Casting</div><h4>🐟 Budget Bass Caster</h4><ul><li><b>Rod:</b> ValueCast 6'6" (200)</li><li><b>Reel:</b> Suggested casting reel</li><li><b>Line:</b> Braid matched to rod/reel</li><li><b>Lure:</b> Bass Jig 1/4 oz (7 g), #1/0</li></ul><span class="lb-price">🪙 Official tutorial route</span><p>Early casting progression without immediately buying heavy equipment.</p></article>
+<article class="lb-card"><div class="lb-type">Value • Light Spin</div><h4>⚡ Budget Light Predator</h4><ul><li><b>Rod:</b> JigWinner 270</li><li><b>Reel:</b> Prima 3500</li><li><b>Line:</b> Fluoro 0.28 mm (4.5 kg)</li><li><b>Lure:</b> Small jig/shad or spoon</li></ul><span class="lb-price">🪙 Value setup</span><p>A reusable light spinning rig for trout, walleye and bass.</p></article>
+<article class="lb-card"><div class="lb-type">Value • Medium Float</div><h4>🌊 Budget Fenix Float</h4><ul><li><b>Rod:</b> Fenix 450</li><li><b>Reel:</b> FatBoySpin 5000</li><li><b>Line:</b> Fluoro 0.3 mm (5.5 kg)</li><li><b>Bait:</b> Worms, dough, corn or species-specific bait</li></ul><span class="lb-price">🪙 Value medium setup</span><p>Documented balanced medium-float combination.</p></article>
+<article class="lb-card"><div class="lb-type">Budget • Minnow</div><h4>🐟 Cheap Live-Bait Predator</h4><ul><li><b>Rod:</b> Light spinning or match rod within target range</li><li><b>Reel:</b> Small compatible spinning reel</li><li><b>Line:</b> Light braid/fluoro within rod rating</li><li><b>Hook:</b> Match hook to minnow size</li><li><b>Bait:</b> Small Minnows / Shiners</li></ul><span class="lb-price">🪙 Reuse existing gear</span><p>Lets you use minnows without purchasing a dedicated expensive rig.</p></article>
+<article class="lb-card"><div class="lb-type">Budget • XP</div><h4>⭐ Low-Cost XP Tuning</h4><ul><li><b>Rod:</b> Lightest safe rod for the target</li><li><b>Reel:</b> Smallest reel with adequate drag</li><li><b>Line:</b> Strong enough to land the fish, below rod rating</li><li><b>Bait:</b> Species-matched worm, minnow, shad or spoon</li></ul><span class="lb-price">💰 Save + tune XP</span><p>Use the Tackle Modifier after several catches and downsize only when landing remains reliable.</p></article>
+</div>
+<div class="lb-tip"><b>💡 Budget rule:</b> Start with the rod you can afford, then choose a reel whose maximum drag is above the line test and keep the line test below the rod's maximum line weight. The official tutorial provides the ValueSpin + MiniSpin 1200, Elemental + InspireCast 2000, OmniFloat + minnows/shiners, and CreekPro + MiniSpin 1200 + Pearl Barley combinations. citeturn0search0turn0search1</div>
+</section>
+<h3>🏆 Best Rod + Reel + Bait Setups</h3>
+  <p class="lead">
+    This is the new setup library for the rods covered by the site's current
+    database. Each recommendation is built around the Fishing Planet balanced
+    tackle rule: line test stays below rod maximum line weight, while reel max
+    drag stays above line test. These are practical starting setups, not a
+    claim that one combo is mathematically best for every fish.
+  </p>
+
+  <div class="rod-filters">
+    <button class="rod-filter active" data-filter="all" type="button">All</button>
+    <button class="rod-filter" data-filter="spinning" type="button">Spinning</button>
+    <button class="rod-filter" data-filter="float" type="button">Float</button>
+    <button class="rod-filter" data-filter="feeder" type="button">Feeder</button>
+    <button class="rod-filter" data-filter="carp" type="button">Carp</button>
+    <button class="rod-filter" data-filter="casting" type="button">Casting</button>
+    <button class="rod-filter" data-filter="saltwater" type="button">Saltwater</button>
+  </div>
+
+  <div class="rod-list">
+    <article class="rod-card" data-type="spinning"><div class="type">Spinning</div><h4>ValueSpin 6'3" (190)</h4><ul><li><b>Reel:</b> MiniSpin 1200</li><li><b>Line:</b> Mono .007" / 0.18 mm</li><li><b>Lure:</b> Casting Spoon 1/6 oz (5 g), #2</li><li><b>Target:</b> Beginner predators</li></ul><div class="why">Official tutorial setup. Excellent first spinning configuration.</div></article>
+
+    <article class="rod-card" data-type="spinning"><div class="type">Spinning</div><h4>Elemental 6'7" (200)</h4><ul><li><b>Reel:</b> InspireCast 2000</li><li><b>Line:</b> Mono .007" / 0.18 mm</li><li><b>Lure:</b> Casting Spoon 1/6 oz (5 g), #2</li><li><b>Target:</b> Early-game predator fishing</li></ul><div class="why">Official tutorial level-4 setup.</div></article>
+
+    <article class="rod-card" data-type="spinning"><div class="type">Spinning</div><h4>JigWinner 270</h4><ul><li><b>Reel:</b> Prima 3500</li><li><b>Line:</b> Fluoro 0.28 mm / 4.5 kg</li><li><b>Lure:</b> Appropriately sized jig/spoon</li><li><b>Target:</b> Trout, Walleye, Bass</li></ul><div class="why">Documented balanced light-spinning example; a strong template for tackle-modifier testing.</div></article>
+
+    <article class="rod-card" data-type="float"><div class="type">Float</div><h4>OmniFloat 11'5" (350)</h4><ul><li><b>Reel:</b> Suitable spin reel, 2+ kg max drag</li><li><b>Line:</b> Braid .005" / 0.12 mm</li><li><b>Float:</b> Chubby Bobber</li><li><b>Hook:</b> Barbless #1/0</li><li><b>Bait:</b> Small Minnows / Shiners</li></ul><div class="why">Based on the game's Match Setup tutorial and ideal for a simple live-bait float build.</div></article>
+
+    <article class="rod-card" data-type="float"><div class="type">Float</div><h4>Fenix 450</h4><ul><li><b>Reel:</b> FatBoySpin 5000</li><li><b>Line:</b> Fluoro 0.3 mm / 5.5 kg</li><li><b>Bait:</b> Match hook/bait to species</li><li><b>Target:</b> Panfish, Crappie, Trout, Catfish, Bass</li></ul><div class="why">Documented medium-float balanced setup.</div></article>
+
+    <article class="rod-card" data-type="feeder"><div class="type">Feeder</div><h4>CreekPro 7'10" (240)</h4><ul><li><b>Reel:</b> MiniSpin 1200</li><li><b>Line:</b> Mono .007" / 0.18 mm</li><li><b>Leader:</b> .004" / 0.1</li><li><b>Sinker:</b> 1/2 oz / 15 g</li><li><b>Hook:</b> #6</li><li><b>Bait:</b> Pearl Barley</li></ul><div class="why">Official tutorial bottom/sinker setup.</div></article>
+
+    <article class="rod-card" data-type="feeder"><div class="type">Feeder</div><h4>CreekPro 270 SE</h4><ul><li><b>Reel:</b> Light/medium feeder-compatible spinning reel</li><li><b>Line:</b> Keep test within 1–3.25 kg rod range</li><li><b>Feeder:</b> Match feeder weight to casting test</li><li><b>Bait:</b> Maggots, worms, dough or species-specific feeder bait</li></ul><div class="why">A modern light feeder platform; select the reel by max drag rather than name alone.</div></article>
+
+    <article class="rod-card" data-type="feeder"><div class="type">Feeder</div><h4>Laker Pro 370 SE</h4><ul><li><b>Reel:</b> Medium feeder spinning reel</li><li><b>Line:</b> 4.5–13 lb / 2–6 kg class</li><li><b>Feeder:</b> 1–2½ oz / 20–70 g</li><li><b>Bait:</b> Feeder groundbait + worms/maggots/dough</li></ul><div class="why">Use the quiver tip and feeder weight that fit the current and target.</div></article>
+
+    <article class="rod-card" data-type="feeder"><div class="type">Feeder</div><h4>Big Alli 420</h4><ul><li><b>Reel:</b> BigRiver Sport / equivalent strong feeder reel</li><li><b>Line:</b> 6.5–18.5 lb / 3–8.5 kg class</li><li><b>Feeder:</b> 85–175 g range</li><li><b>Bait:</b> Heavy feeder mix, pellets, corn or carp bait</li></ul><div class="why">For heavy feeder work where extra casting load and fish power are needed.</div></article>
+
+    <article class="rod-card" data-type="carp"><div class="type">Carp</div><h4>Mega Chuber 375 SE</h4><ul><li><b>Reel:</b> Heavy carp reel</li><li><b>Line:</b> 5–16 kg class</li><li><b>Rig:</b> Carp rig / flat feeder</li><li><b>Bait:</b> Boilies, pellets, corn, method mix</li></ul><div class="why">Modern heavy carp platform; keep line below the rod rating and reel drag above line test.</div></article>
+
+    <article class="rod-card" data-type="carp"><div class="type">Carp</div><h4>Deep Horizon 400 Sport</h4><ul><li><b>Reel:</b> Leviathan 9000 Sport</li><li><b>Line:</b> Braid 0.27 mm / 24 kg</li><li><b>Rig:</b> Carp leader + flat feeder</li><li><b>Bait:</b> Golden boilies/pellets, method mix</li></ul><div class="why">Documented Sport Carp Pack pairing and terminal-tackle selection.</div></article>
+
+    <article class="rod-card" data-type="casting"><div class="type">Casting</div><h4>CosmoCast 6'3" Sport</h4><ul><li><b>Reel:</b> Cyclone 6500 Sport</li><li><b>Line:</b> Mono .02" / 0.5 mm or Fluoro .024" / 0.6 mm</li><li><b>Lure:</b> Crankbaits, medium spoons, heavy jig heads</li><li><b>Target:</b> Heavy predator fishing</li></ul><div class="why">Documented Sport Heavy Casting Pack pairing; use casting reel only.</div></article>
+
+    <article class="rod-card" data-type="saltwater"><div class="type">Saltwater</div><h4>Tsurihito Kōdo Kyatchā 7'2" SE</h4><ul><li><b>Reel:</b> Tsurihito Tsunami Koiru 15000 SE</li><li><b>Line:</b> OceanPower Mono .0413" / 1.05 mm</li><li><b>Lure/Bait:</b> Saltwater lure or fresh bait sized for target</li><li><b>Target:</b> Heavy saltwater predators</li></ul><div class="why">Documented Sailor Collection pairing; choose terminal tackle by species and saltwater conditions.</div></article>
+
+    <article class="rod-card" data-type="saltwater"><div class="type">Saltwater</div><h4>Ocean Fury 5'7" SE</h4><ul><li><b>Reel:</b> RaidenWheel HeavyDuty 18000</li><li><b>Line:</b> Heavy saltwater mono/braid within rod range</li><li><b>Lure:</b> Heavy saltwater lures</li><li><b>Target:</b> Large offshore species</li></ul><div class="why">Documented Sailor Collection pairing for extreme line strength and drag.</div></article>
+  </div>
+
+  <div class="rod-source">
+    <b>How this library works:</b> “Best” means a balanced, practical starting setup for the rod's intended fishing style—not a claim that every fish or location uses the same bait. Fishing Planet's current balanced-tackle guide recommends choosing the rod first, matching line to its line-weight range, then selecting a reel whose maximum drag is above the line test; casting rods require casting reels, while other rod types use spinning reels. citeturn0search0turn0search3
+  </div>
+</div>
+<script>
+(function(){
+  const buttons=document.querySelectorAll('.rod-filter');
+  const cards=document.querySelectorAll('.rod-card');
+  buttons.forEach(btn=>btn.addEventListener('click',()=>{
+    buttons.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    cards.forEach(c=>c.style.display=(f==='all'||c.dataset.type===f)?'block':'none');
+  }));
+})();
+</script>
+
+<div class="fts" id="fully-tuned-setups">
+  <h3>🎯 Fully Tuned Rod + Reel + Bait Setups</h3>
+  <p class="lead">
+    These are ready-to-use setup templates for easier fishing. The goal is to
+    keep the tackle balanced while avoiding unnecessary power. The exact best
+    setup can change with fish weight, location, level, and available gear.
+  </p>
+
+  <div class="fts-grid">
+    <article class="fts-card">
+      <span class="fts-badge">Starter / Trout</span>
+      <h4>🏔️ Rocky Lake — Trout</h4>
+      <p><b>Easy float setup</b></p>
+      <ul>
+        <li><b>Rod:</b> OmniFloat 11'5" (350)</li>
+        <li><b>Reel:</b> Spin reel with at least 2 kg max drag</li>
+        <li><b>Line:</b> Braid .005" (0.12 mm)</li>
+        <li><b>Hook:</b> Barbless #1/0</li>
+        <li><b>Bobber:</b> Chubby Bobber</li>
+        <li><b>Bait:</b> Small Minnows or Shiners</li>
+      </ul>
+      <p style="margin-top:10px">This follows the game's own tutorial Match Setup example and is a simple ready-to-use minnow setup.</p>
+    </article>
+
+    <article class="fts-card">
+      <span class="fts-badge">Spinning / Walleye</span>
+      <h4>🎯 Light Spinning — Walleye</h4>
+      <p><b>Light, balanced lure setup</b></p>
+      <ul>
+        <li><b>Rod:</b> JigWinner 270</li>
+        <li><b>Reel:</b> Prima 3500</li>
+        <li><b>Line:</b> Fluoro 0.28 mm (4.5 kg test)</li>
+        <li><b>Lure:</b> Properly sized spoon/jig for the target</li>
+        <li><b>Drag:</b> About setting 6 on the documented 8-setting Prima 3500 example</li>
+      </ul>
+      <p style="margin-top:10px">This is the documented balanced light-spinning example used for trout, walleye and sometimes bass.</p>
+    </article>
+
+    <article class="fts-card">
+      <span class="fts-badge">Medium Float</span>
+      <h4>🌊 Small–Medium Fish</h4>
+      <p><b>General-purpose float setup</b></p>
+      <ul>
+        <li><b>Rod:</b> Fenix 450</li>
+        <li><b>Reel:</b> FatBoySpin 5000</li>
+        <li><b>Line:</b> Fluoro 0.3 mm (5.5 kg test)</li>
+        <li><b>Bait:</b> Match the hook/bait to panfish, trout, catfish or bass</li>
+        <li><b>Drag:</b> Keep below the rod/line limit rather than running maximum</li>
+      </ul>
+      <p style="margin-top:10px">A documented medium float combination for small to medium fish.</p>
+    </article>
+
+    <article class="fts-card">
+      <span class="fts-badge">Feeder / Bottom</span>
+      <h4>🪱 Beginner Bottom Setup</h4>
+      <p><b>Lone Star Lake feeder setup</b></p>
+      <ul>
+        <li><b>Rod:</b> CreekPro 7'10" (240) Feeder Rod</li>
+        <li><b>Reel:</b> MiniSpin 1200</li>
+        <li><b>Line:</b> Mono .007" (0.18 mm)</li>
+        <li><b>Leader:</b> .004" (0.1)</li>
+        <li><b>Sinker:</b> 1/2 oz (15 g)</li>
+        <li><b>Hook:</b> #6</li>
+        <li><b>Bait:</b> Pearl Barley</li>
+      </ul>
+      <p style="margin-top:10px">This combination comes directly from the game's tutorial for assembling a sinker/feeder setup.</p>
+    </article>
+
+    <article class="fts-card">
+      <span class="fts-badge">Carp / Feeder</span>
+      <h4>🌾 Lesní Víla — Carp</h4>
+      <p><b>Easy feeder template</b></p>
+      <ul>
+        <li><b>Rod:</b> Feeder Rod</li>
+        <li><b>Feeder:</b> Open Feeder 1/2 oz (15 g)</li>
+        <li><b>Line:</b> Mono .008" (0.2 mm)</li>
+        <li><b>Leader:</b> .004" (0.1)</li>
+        <li><b>Hook:</b> #4</li>
+        <li><b>Bait:</b> Dough Bait</li>
+        <li><b>Groundbait:</b> Crimson Cold Water Groundbait</li>
+      </ul>
+      <p style="margin-top:10px">The tutorial specifically uses this feeder configuration for bottom fishing at Lesní Víla.</p>
+    </article>
+
+    <article class="fts-card">
+      <span class="fts-badge">Heavy Spinning</span>
+      <h4>💪 Large Fish — Heavy Spin</h4>
+      <p><b>Powerful but balanced example</b></p>
+      <ul>
+        <li><b>Rod:</b> Thora 290</li>
+        <li><b>Reel:</b> Exterminator 5500</li>
+        <li><b>Line:</b> Fluoro 0.35 mm (6.8 kg test)</li>
+        <li><b>Lure:</b> Match lure weight to the Thora's casting range</li>
+        <li><b>Drag:</b> Documented example uses setting 6</li>
+      </ul>
+      <p style="margin-top:10px">This is the documented heavy-spinning setup for larger fish at California.</p>
+    </article>
+  </div>
+
+  <div class="fts-note">
+    <b>How to use these for better XP:</b> Start with the setup that matches the
+    fish class you want. Then check the Tackle Modifier after several catches.
+    If the setup is much stronger than the fish, test a lighter safe component.
+    If the fight becomes unreliable, step back up. Fishing Planet's documented
+    balance rule is: reel max drag should exceed line test, while line test
+    should remain below the rod's maximum line weight. citeturn0search0turn0search3
+  </div>
+</div>
+
+<div class="tackle-example" id="tackle-xp-example">
+  <h3>🎣 Example: Build a Better-XP Tackle Setup</h3>
+  <p class="lead">
+    Here is a practical example using <b>Walleye at Emerald Lake</b>. The exact
+    modifier depends on the fish's actual weight, so this is an example of how
+    to tune the setup—not a guaranteed XP percentage.
+  </p>
+
+  <div class="example-grid">
+    <article class="example-card">
+      <div class="emoji">🎣</div>
+      <h4>Rod: JigWinner 270</h4>
+      <p>Use a light spinning rod appropriate for the smaller Walleye weight
+      class rather than a much heavier rod intended for large fish.</p>
+    </article>
+    <article class="example-card">
+      <div class="emoji">⚙️</div>
+      <h4>Reel: Prima 2000</h4>
+      <p>A lighter reel keeps the overall setup from being unnecessarily
+      overpowered. Balance the reel with the rod and line rather than simply
+      buying the strongest available reel.</p>
+    </article>
+    <article class="example-card">
+      <div class="emoji">🪱</div>
+      <h4>Bait/Lure: Barbless Narrow Spoon</h4>
+      <p>For a lure example, use a properly sized barbless narrow spoon.
+      Barbless tackle is commonly used to improve XP when the size fits the
+      target.</p>
+    </article>
+  </div>
+
+  <div class="example-result">
+    <b>How to tune it:</b> Start with the light setup, catch several Walleye,
+    and inspect the XP modifier. If you see red arrows, the setup is too strong
+    for that catch; try reducing the reel/rod/line strength. If you get green
+    arrows, the fish is strong relative to your tackle and the modifier is
+    favorable, but don't go so light that you repeatedly lose fish.
+  </div>
+
+  <div class="example-compare">
+    <table>
+      <thead><tr><th>Setup</th><th>Example gear</th><th>Expected direction</th><th>What to do</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>❌ Too heavy</td>
+          <td>Heavy rod + high-drag reel + heavy line</td>
+          <td>Red arrows / reduced XP</td>
+          <td>Downsize the strongest components.</td>
+        </tr>
+        <tr>
+          <td>🟢 Tuned</td>
+          <td>JigWinner 270 + Prima 2000 + suitable light line + barbless narrow spoon</td>
+          <td>Better chance of a favorable modifier</td>
+          <td>Keep testing against the actual fish sizes you catch.</td>
+        </tr>
+        <tr>
+          <td>⚠️ Too light</td>
+          <td>Gear that repeatedly overloads or breaks</td>
+          <td>Possible green modifier, but poor landing efficiency</td>
+          <td>Increase the weak component until fish can be landed reliably.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tm-note" style="margin-top:14px">
+    <b>Important:</b> The game calculates the tackle modifier from the setup and
+    the fish you actually catch. Community reports specifically note that the
+    same Walleye setup can produce different results depending on the fish's
+    weight. The example above is therefore a tuning model, not a promise of a
+    fixed XP bonus. citeturn0reddit14
+  </div>
+</div>
+
+<div class="xp-good">
+    <b>Best practical formula:</b>
+    Target fish → choose the lightest reliable rod/reel/line combination →
+    use an appropriately sized hook/lure → prefer barbless when practical →
+    catch several fish → check the modifier → adjust → compare XP per hour.
+  </div>
+
+  <div class="xp-table">
+    <table>
+      <thead><tr><th>What you change</th><th>If XP modifier improves</th><th>If XP modifier gets worse</th></tr></thead>
+      <tbody>
+        <tr><td>Rod</td><td>Keep the lighter rod if it lands the fish reliably.</td><td>Return to the previous rod or test an intermediate power.</td></tr>
+        <tr><td>Reel</td><td>Keep the smaller suitable reel.</td><td>Use a stronger reel if the fight becomes unsafe or impractical.</td></tr>
+        <tr><td>Line</td><td>Use the lighter suitable line.</td><td>Increase line strength if breaks/overload become frequent.</td></tr>
+        <tr><td>Hook / lure</td><td>Keep the size that matches the target and produces good modifier results.</td><td>Resize it; a larger hook/lure can attract larger fish but can also change the fish you catch.</td></tr>
+        <tr><td>Barbless</td><td>Prefer it when legal/suitable and the target size is correct.</td><td>Do not force an unsuitable barbless size just for the bonus.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="xp-warn">
+    <b>Important:</b> Fishing Planet does not publicly document a complete current
+    formula that lets a database calculate the exact XP percentage from every
+    rod/reel/line combination. This optimizer therefore uses the documented
+    tackle rule plus the in-game modifier feedback instead of inventing exact
+    hidden percentages.
+  </div>
+</div>
+
+<div class="tm-note"><b>Important:</b> Fishing Planet's public documentation confirms these modifiers and parameters, but does not provide a complete current mathematical formula for every XP modifier. This guide explains the documented mechanics without inventing hidden percentage values.</div>
+</div></div></section>
 <section id="lure-library"><div class="wrap"><div class="section-head"><div><h2>Spoon / Jig / Shad Library</h2><p>Expanded lure choices for Spoon / Jig, Shad / Jig, and Small Jig / Worm.</p></div></div><div class="lure-tools"><input id="lureQ" class="input" placeholder="Search spoon, jig, shad, worm, color, size…"><select id="lureCat" class="select"><option value="">All lure types</option><option>Spoons</option><option>Jigs</option><option>Shads / Jig Baits</option><option>Small Jig / Worm</option></select></div><div id="lureCount" class="count"></div><div id="lureGrid" class="lure-grid"></div></div></section>
 <section id="jighead-library"><div class="wrap"><div class="section-head"><div><h2>Complete Jig Head Library</h2><p>Common and barbless jig heads for jigging and soft-plastic presentations.</p></div></div><div class="hook-tools"><input id="jigHeadQ" class="input" placeholder="Search jig head, size, fish, or use…"><select id="jigHeadCat" class="select"><option value="">All jig head types</option><option>Common Jig Heads</option><option>Barbless Jig Heads</option></select></div><div id="jigHeadCount" class="count"></div><div id="jigHeadGrid" class="hook-grid"></div></div></section>
 <section id="bobber-library"><div class="wrap"><div class="section-head"><div><h2>Complete Bobber Library</h2><p>Bobbers and float indicators organized by type and use.</p></div></div><div class="hook-tools"><input id="bobberQ" class="input" placeholder="Search bobber, size, fish, or use…"><select id="bobberCat" class="select"><option value="">All bobber types</option><option>Fixed Bobbers</option><option>Slip Bobbers</option><option>Waggler Bobbers</option><option>Foam Bobbers</option><option>Carp Bobbers</option><option>Marker Floats</option></select></div><div id="bobberCount" class="count"></div><div id="bobberGrid" class="hook-grid"></div></div></section><section id="sinker-library"><div class="wrap"><div class="section-head"><div><h2>Complete Sinker Library</h2><p>Sinkers organized by bottom fishing, soft-plastic rigs, saltwater, live-bait, and trolling applications.</p></div></div><div class="hook-tools"><input id="sinkerQ" class="input" placeholder="Search sinker, size, fish, or use…"><select id="sinkerCat" class="select"><option value="">All sinker types</option><option>Bottom Sinkers</option><option>Drop Sinkers</option><option>Bullet Sinkers</option><option>Saltwater Bottom Sinkers</option><option>Head Starter Sinkers</option><option>Trolling Skirt Heads</option></select></div><div id="sinkerCount" class="count"></div><div id="sinkerGrid" class="hook-grid"></div></div></section><section id="rig-library"><div class="wrap"><div class="section-head"><div><h2>Complete Rig Library</h2><p>Rig choices for soft plastics, bottom presentations, and three-way setups.</p></div></div><div class="hook-tools"><input id="rigQ" class="input" placeholder="Search rig, fish, or use…"><select id="rigCat" class="select"><option value="">All rig types</option><option>Carolina Rigs</option><option>Texas Rigs</option><option>Three-Way Rigs</option></select></div><div id="rigCount" class="count"></div><div id="rigGrid" class="hook-grid"></div></div></section>
@@ -810,7 +1837,9 @@ window.addEventListener('unhandledrejection', function (event) {
 <select id="style" class="select"><option value="">All methods</option><option>Float</option><option>Spinning</option><option>Bottom</option><option>Feeder</option><option>Saltwater</option></select>
 <select id="level" class="select"><option value="">Any level</option><option value="20">1–20</option><option value="40">21–40</option><option value="60">41–60</option><option value="99">61+</option></select>
 </div>
-<div class="count" style="margin-top:-8px">💡 Search works for bait/lures too — try <b>worm</b>, <b>corn</b>, <b>boilie</b>, <b>pellet</b>, <b>shrimp</b>, <b>squid</b>, <b>spoon</b>, <b>shad</b>, <b>cutbait</b>, or <b>minnow</b>.</div><div id="count" class="count"></div><div id="finderBaitMatches" class="finder-baits" style="display:none"></div>
+<div class="count" style="margin-top:-8px">💡 Search works for bait/lures too — try <b>worm</b>, <b>corn</b>, <b>boilie</b>, <b>pellet</b>, <b>shrimp</b>, <b>squid</b>, <b>spoon</b>, <b>shad</b>, <b>cutbait</b>, <b>small minnow</b>, <b>shiner</b>, or <b>aracu minnow</b>.</div>
+<div class="minnow-bait-note"><b>🐟 Minnow baits added:</b> Small Minnows, Shiners, Large Minnow, Common Minnow, and Aracu Minnow.</div>
+<div id="count" class="count"></div><div id="finderBaitMatches" class="finder-baits" style="display:none"></div>
 <div class="table-wrap"><table class="table"><thead><tr>
 <th>Fish</th><th>Rod</th><th>Reel</th><th>Line</th><th>Hook</th><th>Bait / Lure</th><th>Location</th><th>Best time</th><th>Method</th>
 </tr></thead><tbody id="rows"></tbody></table></div>
@@ -2278,6 +3307,271 @@ document.getElementById('sinkerCat').addEventListener('change',renderSinkers);
     const saltwater=e.target.closest('#saltwater-library');
     if(saltwater && e.target.closest('.clickable-item')) return;
   }, true);
+
+
+<script id="move-new-setups-to-top">
+document.addEventListener('DOMContentLoaded', () => {
+  const center = document.getElementById('setup-center-moved');
+  const ids = [
+    'feeder-pole-setups',
+    'casting-pole-setups',
+    'spinning-pole-setups',
+    'match-pole-setups',
+    'low-budget-setups',
+    'best-setups',
+    'fully-tuned-setups'
+  ];
+  if (!center) return;
+
+  const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
+  sections.forEach(section => center.appendChild(section));
+
+  // Remove the older setup shortcut strip after the real sections are moved.
+  document.querySelectorAll('.ps-index').forEach(el => el.remove());
+});
+</script>
+
+
+<script id="complete-site-navigation-compatibility">
+document.addEventListener("DOMContentLoaded", function () {
+  // Keep all existing page navigation working while making the new Setup Center
+  // the single top-level entry point for the new libraries.
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function () {
+      const id = link.getAttribute("href");
+      if (!id || id === "#") return;
+      const target = document.querySelector(id);
+      if (target) {
+        setTimeout(function () {
+          target.scrollIntoView({behavior:"smooth", block:"start"});
+        }, 0);
+      }
+    });
+  });
+
+  // Preserve a Back to Top control if the original page has one.
+  const backTop = document.querySelector(
+    '#backToTop, .back-to-top, [data-back-to-top], a[href="#top"], a[href="#home"]'
+  );
+  if (backTop) {
+    backTop.addEventListener("click", function () {
+      window.scrollTo({top:0, behavior:"smooth"});
+    });
+  }
+});
+</script>
+
+
+<script id="library-aliases">
+document.addEventListener("DOMContentLoaded",function(){
+  const aliases={
+    "#fish-handling-equipment":"#keep-nets-stringers",
+    "#angler-equipment":"#outfits-library",
+    "#fishing-line-library":"#lines-library",
+    "#terminal-tackle-library":"#leaders-library",
+    "#reel-library":"#reels-library",
+    "#bait-library":"#bait-library"
+  };
+  Object.keys(aliases).forEach(function(alias){
+    document.querySelectorAll('a[href="'+alias+'"]').forEach(function(a){
+      a.setAttribute("href",aliases[alias]);
+    });
+  });
+});
+</script>
+
+
+<script id="block-new-pole-setup-navigation">
+document.addEventListener("DOMContentLoaded", function(){
+  const blocked = new Set([
+    "#feeder-pole-setups",
+    "#casting-pole-setups",
+    "#spinning-pole-setups",
+    "#match-pole-setups",
+    "#low-budget-setups",
+    "#best-setups",
+    "#fully-tuned-setups"
+  ]);
+
+  document.querySelectorAll('a[href]').forEach(function(link){
+    if(blocked.has(link.getAttribute("href"))){
+      link.addEventListener("click", function(e){ e.preventDefault(); });
+      link.setAttribute("aria-disabled","true");
+      link.setAttribute("tabindex","-1");
+    }
+  });
+});
+</script>
+
+
+<script id="block-all-setup-collection-links">
+document.addEventListener("DOMContentLoaded", function(){
+  const blocked = new Set([
+    "#feeder-pole-setups",
+    "#casting-pole-setups",
+    "#spinning-pole-setups",
+    "#match-pole-setups",
+    "#low-budget-setups",
+    "#best-setups",
+    "#fully-tuned-setups"
+  ]);
+
+  document.querySelectorAll('a[href]').forEach(function(link){
+    if (blocked.has(link.getAttribute("href"))) {
+      link.addEventListener("click", function(e){ e.preventDefault(); });
+      link.setAttribute("aria-disabled", "true");
+      link.setAttribute("tabindex", "-1");
+    }
+  });
+});
+</script>
+
+
+<script id="block-feeder-collection-links">
+document.addEventListener("DOMContentLoaded", function(){
+  document.querySelectorAll('a[href="#feeder-pole-setups"]').forEach(function(link){
+    link.addEventListener("click", function(e){
+      e.preventDefault();
+      e.stopPropagation();
+    }, true);
+    link.setAttribute("aria-disabled","true");
+    link.setAttribute("tabindex","-1");
+  });
+
+  const feeder = document.getElementById("feeder-pole-setups");
+  if (feeder) {
+    feeder.querySelectorAll("a,button,[role='button']").forEach(function(el){
+      el.addEventListener("click", function(e){
+        e.preventDefault();
+        e.stopPropagation();
+      }, true);
+      el.setAttribute("aria-disabled","true");
+      el.setAttribute("tabindex","-1");
+    });
+  }
+});
+</script>
+
+
+<script id="feeder-hard-lock">
+(function(){
+  const lockedSelector = "#feeder-pole-setups";
+
+  function isLockedTarget(target){
+    return target && target.closest && target.closest(lockedSelector);
+  }
+
+  // Capture before page-level delegated click handlers can see the event.
+  ["click","dblclick","auxclick","contextmenu","pointerdown","pointerup"].forEach(function(type){
+    document.addEventListener(type, function(e){
+      if(isLockedTarget(e.target)){
+        e.preventDefault();
+        e.stopImmediatePropagation();
+      }
+    }, true);
+  });
+
+  // Stop keyboard activation if anything inside the collection somehow receives focus.
+  document.addEventListener("keydown", function(e){
+    if((e.key === "Enter" || e.key === " ") && isLockedTarget(document.activeElement)){
+      e.preventDefault();
+      e.stopImmediatePropagation();
+    }
+  }, true);
+
+  document.addEventListener("DOMContentLoaded", function(){
+    const section = document.querySelector(lockedSelector);
+    if(!section) return;
+
+    // Remove interactive semantics from every descendant.
+    section.querySelectorAll("a,button,input,select,textarea,[role],[tabindex]").forEach(function(el){
+      el.removeAttribute("onclick");
+      el.removeAttribute("href");
+      el.removeAttribute("role");
+      el.removeAttribute("tabindex");
+      el.setAttribute("aria-disabled","true");
+    });
+
+    // Also make any direct jump link to this collection inert.
+    document.querySelectorAll('a[href="#feeder-pole-setups"]').forEach(function(el){
+      el.removeAttribute("href");
+      el.setAttribute("aria-disabled","true");
+      el.setAttribute("tabindex","-1");
+    });
+  });
+})();
+</script>
+
+
+<script id="hard-lock-all-seven-setup-collections">
+(function(){
+  const locked = new Set([
+    "#feeder-pole-setups",
+    "#casting-pole-setups",
+    "#spinning-pole-setups",
+    "#match-pole-setups",
+    "#low-budget-setups",
+    "#best-setups",
+    "#fully-tuned-setups"
+  ]);
+
+  function insideLocked(target) {
+    return target && target.closest && Array.from(locked).some(sel => target.closest(sel));
+  }
+
+  // Capture interaction before any other page handler can respond.
+  [
+    "click","dblclick","auxclick","contextmenu",
+    "pointerdown","pointerup","pointermove",
+    "mousedown","mouseup","touchstart","touchend"
+  ].forEach(function(type){
+    document.addEventListener(type, function(e){
+      if (insideLocked(e.target)) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+      }
+    }, true);
+  });
+
+  document.addEventListener("keydown", function(e){
+    if ((e.key === "Enter" || e.key === " ") && insideLocked(document.activeElement)) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+    }
+  }, true);
+
+  document.addEventListener("DOMContentLoaded", function(){
+    locked.forEach(function(sel){
+      const section = document.querySelector(sel);
+      if (!section) return;
+
+      // Strip interactive semantics from anything inside the locked collection.
+      section.querySelectorAll(
+        "a,button,input,select,textarea,[role],[tabindex],[onclick]"
+      ).forEach(function(el){
+        el.removeAttribute("href");
+        el.removeAttribute("onclick");
+        el.removeAttribute("role");
+        el.removeAttribute("tabindex");
+        el.setAttribute("aria-disabled","true");
+      });
+    });
+
+    // Also disable any top-directory links that point to these seven collections.
+    document.querySelectorAll("a[href]").forEach(function(link){
+      if (locked.has(link.getAttribute("href"))) {
+        link.removeAttribute("href");
+        link.setAttribute("aria-disabled","true");
+        link.setAttribute("tabindex","-1");
+        link.addEventListener("click", function(e){
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        }, true);
+      }
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
