@@ -1189,6 +1189,130 @@ body{overflow-x:hidden}
 #feeder-pole-destination,#casting-pole-destination,#spinning-pole-destination,#match-pole-destination,#low-budget-destination,#best-setup-destination,#fully-tuned-destination{scroll-margin-top:110px;}
 .setup-target-link{pointer-events:auto!important;cursor:pointer!important;}
 </style>
+
+<style id="professional-tab-layout">
+/* ---------- Clean professional tab system ---------- */
+.pro-site-tabs{
+  position:sticky;
+  top:78px;
+  z-index:900;
+  background:rgba(4,16,23,.94);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid #173b48;
+  box-shadow:0 8px 25px rgba(0,0,0,.16);
+}
+.pro-tabs-inner{
+  max-width:1450px;
+  margin:0 auto;
+  padding:9px 26px;
+  display:flex;
+  gap:6px;
+  overflow-x:auto;
+  scrollbar-width:thin;
+}
+.pro-tab{
+  appearance:none;
+  border:1px solid #1b4655;
+  background:#071a23;
+  color:#8faab4;
+  border-radius:11px;
+  padding:10px 13px;
+  white-space:nowrap;
+  font:800 .72rem/1 Inter,ui-sans-serif,system-ui,sans-serif;
+  cursor:pointer;
+  transition:transform .15s ease,background .15s ease,border-color .15s ease,color .15s ease,box-shadow .15s ease;
+}
+.pro-tab:hover{
+  color:#f3fbfd;
+  border-color:#2d7187;
+  background:#0b2530;
+  transform:translateY(-1px);
+}
+.pro-tab.active{
+  color:#fff;
+  border-color:#32cde9;
+  background:linear-gradient(135deg,#0e3b4b,#0b2935);
+  box-shadow:inset 0 -2px 0 #29d8ff,0 7px 20px rgba(0,0,0,.16);
+}
+.pro-tab:focus-visible{
+  outline:2px solid #29d8ff;
+  outline-offset:2px;
+}
+
+/* Sections become clean tab pages without changing the database itself. */
+.pro-hidden{display:none!important}
+.pro-page-intro{
+  max-width:1450px;
+  margin:0 auto;
+  padding:28px 26px 0;
+}
+.pro-page-intro .pro-page-kicker{
+  color:#29d8ff;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:.65rem;
+  font-weight:950;
+}
+.pro-page-intro h2{
+  margin:6px 0 3px;
+  font-size:clamp(1.55rem,3vw,2.25rem);
+  letter-spacing:-1.1px;
+}
+.pro-page-intro p{
+  margin:0;
+  color:#8ea9b5;
+  max-width:850px;
+}
+
+/* Make large library sections breathe more. */
+#lure-library,#jighead-library,#bobber-library,#sinker-library,#rig-library,
+#feeder-library,#softbait-library,#saltwater-library,#spoon-spinner-library,
+#hardbait-library,#hook-library,#bait-library,
+#saltwater-baits-library,#saltwater-hard-baits,#keep-nets-stringers,
+#outfits-library,#lines-library,#leaders-library,#reels-library,
+#rods-library,#common-baits-library{
+  scroll-margin-top:145px;
+}
+
+/* Mobile */
+@media(max-width:850px){
+  .pro-site-tabs{top:64px}
+  .pro-tabs-inner{padding:7px 14px}
+  .pro-tab{padding:9px 11px;font-size:.68rem}
+}
+</style>
+
+
+<style id="professional-cleanup">
+main#main-content{padding-bottom:45px}
+section{scroll-margin-top:145px}
+.card,.tm-card,.ps-section,.library-panel,.source{
+  transition:border-color .18s ease,box-shadow .18s ease;
+}
+.card:hover,.tm-card:hover{
+  border-color:#285c6d;
+}
+@media(min-width:1000px){
+  #database .controls{
+    position:sticky;
+    top:145px;
+    z-index:40;
+    padding:12px;
+    margin-bottom:18px;
+    background:rgba(4,16,23,.9);
+    backdrop-filter:blur(16px);
+    border:1px solid #183e4c;
+    border-radius:15px;
+  }
+}
+</style>
+
+
+<style id="raw-js-cleanup">
+/* Keep implementation code out of the visible interface. */
+.raw-javascript, .visible-javascript { display:none !important; }
+</style>
+
 </head>
 <body id="top">
 
@@ -1290,6 +1414,20 @@ body{overflow-x:hidden}
 </div>
 </header>
 
+<nav class="pro-site-tabs" id="proSiteTabs" aria-label="Main website sections">
+  <div class="pro-tabs-inner">
+    <button class="pro-tab active" type="button" data-pro-tab="finder">🎯 Setup Finder</button>
+    <button class="pro-tab" type="button" data-pro-tab="setup-libraries">🎣 Setup Libraries</button>
+    <button class="pro-tab" type="button" data-pro-tab="tackle">⚙️ Tackle Modifiers</button>
+    <button class="pro-tab" type="button" data-pro-tab="lures">🪝 Lure &amp; Tackle</button>
+    <button class="pro-tab" type="button" data-pro-tab="gear">🧰 Gear &amp; Equipment</button>
+    <button class="pro-tab" type="button" data-pro-tab="fish">🐟 Fish Database</button>
+    <button class="pro-tab" type="button" data-pro-tab="setups">📋 Core Setups</button>
+    <button class="pro-tab" type="button" data-pro-tab="guide">📖 Guide &amp; Notes</button>
+  </div>
+</nav>
+
+
 <script>
 (function(){
   const toggle = document.getElementById('navToggle');
@@ -1319,6 +1457,13 @@ body{overflow-x:hidden}
 })();
 </script>
 
+
+
+<div class="pro-page-intro" id="proPageIntro">
+  <div class="pro-page-kicker">Fishing Planet • Professional Database</div>
+  <h2 id="proPageTitle">Setup Finder</h2>
+  <p id="proPageDescription">Find the right starting tackle for a target fish, then move through the database using the organized tabs above.</p>
+</div>
 
 <section id="finder" class="finder-top">
   <div class="wrap">
@@ -3500,10 +3645,7 @@ document.getElementById('sinkerCat').addEventListener('change',renderSinkers);
 </script>
 
 
-  document.addEventListener('click',function(e){
-    const saltwater=e.target.closest('#saltwater-library');
-    if(saltwater && e.target.closest('.clickable-item')) return;
-  }, true);
+  
 
 
 <script id="move-new-setups-to-top">
@@ -3711,6 +3853,149 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+</script>
+
+
+<script id="professional-tab-controller">
+(function(){
+  const groups = {
+    finder: ["finder","hero"],
+    "setup-libraries": [
+      "setup-center-moved",
+      "low-budget-setups","match-pole-setups","spinning-pole-setups",
+      "casting-pole-setups","feeder-pole-setups","best-setups","fully-tuned-setups"
+    ],
+    tackle: ["tackle-modifiers"],
+    lures: [
+      "lure-library","jighead-library","bobber-library","sinker-library",
+      "rig-library","feeder-library","softbait-library","saltwater-library",
+      "spoon-spinner-library","hardbait-library","hook-library","bait-library"
+    ],
+    gear: [
+      "saltwater-baits-library","saltwater-hard-baits","keep-nets-stringers",
+      "outfits-library","lines-library","leaders-library","reels-library",
+      "rods-library","common-baits-library"
+    ],
+    fish: ["database"],
+    setups: ["setups"],
+    guide: ["notes"]
+  };
+
+  const tabs = Array.from(document.querySelectorAll(".pro-tab"));
+  const allIds = Object.values(groups).flat();
+
+  function getGroupForId(id){
+    for(const [group, ids] of Object.entries(groups)){
+      if(ids.includes(id)) return group;
+    }
+    return null;
+  }
+
+  function activateTab(group, shouldScroll){
+    if(!groups[group]) return false;
+
+    tabs.forEach(tab => {
+      const active = tab.dataset.proTab === group;
+      tab.classList.toggle("active", active);
+      tab.setAttribute("aria-selected", active ? "true" : "false");
+    });
+
+    allIds.forEach(id => {
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.classList.toggle("pro-hidden", !groups[group].includes(id));
+    });
+
+    document.body.dataset.proActiveTab = group;
+
+    if(shouldScroll){
+      const bar = document.getElementById("proSiteTabs");
+      const y = bar ? bar.getBoundingClientRect().bottom + window.pageYOffset + 8 : 0;
+      window.scrollTo({top: Math.max(0, y), behavior:"smooth"});
+    }
+    return true;
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => activateTab(tab.dataset.proTab, true));
+  });
+
+  // Any existing website anchor that points into another tab automatically
+  // switches to that tab first, then lands on the exact destination.
+  document.addEventListener("click", function(event){
+    const link = event.target.closest('a[href^="#"]');
+    if(!link) return;
+
+    const href = link.getAttribute("href");
+    if(!href || href === "#") return;
+
+    const id = decodeURIComponent(href.slice(1));
+    const target = document.getElementById(id);
+    if(!target) return;
+
+    const group = getGroupForId(id);
+    if(!group) return;
+
+    event.preventDefault();
+    activateTab(group, false);
+
+    requestAnimationFrame(() => {
+      const bar = document.getElementById("proSiteTabs");
+      const offset = bar ? bar.getBoundingClientRect().height + 18 : 18;
+      const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({top:Math.max(0,y), behavior:"smooth"});
+      history.replaceState(null, "", "#" + id);
+    });
+  });
+
+  // Start cleanly on Setup Finder.
+  activateTab("finder", false);
+
+  // Expose a tiny API for existing scripts or future buttons.
+  window.openDatabaseTab = function(group, id){
+    if(!groups[group]) return;
+    activateTab(group, false);
+    if(id){
+      const target = document.getElementById(id);
+      if(target){
+        requestAnimationFrame(() => {
+          const bar = document.getElementById("proSiteTabs");
+          const offset = bar ? bar.getBoundingClientRect().height + 18 : 18;
+          const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({top:Math.max(0,y), behavior:"smooth"});
+        });
+      }
+    }
+  };
+})();
+</script>
+
+
+<script id="professional-tab-title-sync">
+(function(){
+  const info = {
+    finder:["Setup Finder","Choose a fish and get a complete starting setup."],
+    "setup-libraries":["Setup Libraries","Browse feeder, casting, spinning, match, low-budget, best and fully tuned setups."],
+    tackle:["Tackle Modifiers","Understand XP, tackle strength, line, hook, bait and fight-load modifiers."],
+    lures:["Lure & Tackle Libraries","Browse spoons, jigs, shad, jig heads, bobbers, sinkers, rigs, feeders, hooks and baits."],
+    gear:["Gear & Equipment","Browse saltwater bait, handling equipment, clothing, lines, leaders, reels and rods."],
+    fish:["Fish Database","Search the fish database by species, region, method, level, tackle, bait and location."],
+    setups:["Core Setups","Review the named starting setups collected in the database."],
+    guide:["Guide & Notes","Read database usage notes, time guidance, balance tips and update information."]
+  };
+  function sync(){
+    const group = document.body.dataset.proActiveTab || "finder";
+    const data = info[group] || info.finder;
+    const t = document.getElementById("proPageTitle");
+    const d = document.getElementById("proPageDescription");
+    if(t) t.textContent = data[0];
+    if(d) d.textContent = data[1];
+  }
+  document.querySelectorAll(".pro-tab").forEach(t =>
+    t.addEventListener("click", () => setTimeout(sync, 0))
+  );
+  sync();
+})();
 </script>
 
 </body>
